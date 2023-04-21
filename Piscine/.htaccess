@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /
+#si ce n'est pas un répertoire
+RewriteCond %{REQUEST_FILENAME} !-d
+# Si ce n'est pas un fichier
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ Piscine/index.php [QSA,L]
+
+RewriteRule ^Piscine/?$ /view/accueil.php
+RewriteRule ^Piscine/boutique?$ /view/boutique.php
+RewriteRule ^Piscine/paiement?$ /view/payement.php
+RewriteRule ^Piscine/success?$ /view/success.php

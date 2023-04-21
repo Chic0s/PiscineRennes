@@ -1,0 +1,134 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+.box {
+    flex: 1;
+    overflow: visible;
+    transition: .5s;
+    margin: 0 0;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, .1);
+    line-height: 0;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+    cursor: pointer;
+}
+
+button {
+    border-width: 0;
+}
+
+.box> img{
+    width: calc(100%);
+    height: 76vh;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.container {
+    background-color: rgb(162, 212, 255);
+}
+
+.container:hover .box {
+    filter: blur(5px) opacity(60%);
+    -webkit-filter: blur(5px) opacity(60%);
+    -moz-filter: blur(5px) opacity(60%);
+}
+
+.container > .box:hover{
+    filter: none;
+    -webkit-filter: none;
+    -moz-filter: none;
+    flex:1 1 50%;
+}
+
+.label {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16pt;
+    color: white;
+}
+
+.box> div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 0, 0, 0.5);
+    width: 160px;
+    height: 30px;
+    transition: .5s;
+    border-radius: 5px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+/* 
+.collapsible-bassin {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+ Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover)
+.active, .collapsible-bassin:hover {
+    background-color: #ccc;
+  }
+  
+   Style the collapsible content. Note: hidden by default 
+  .collapsible-contenu {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  } */
+.epuise {
+    color: red;
+    font-style: italic;
+    visibility:visible;
+}
+.creneau-disponible .epuise{
+    visibility: hidden;
+}
+.creneau-disponible .creneau-corps{
+    border: 2px solid deepskyblue;
+    border-radius: 2px;
+    padding:2px;
+    cursor:pointer;
+}
+.creneau-disponible{
+    margin: 5px 0;
+}
+button {
+    color:black;
+}
+
+#reservation{
+    text-align: center;
+}
+
+#error {
+    background-color: red;
+    color: white;
+}

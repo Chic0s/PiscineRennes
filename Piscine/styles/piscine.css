@@ -1,0 +1,12 @@
+.box:disabled img {
+    filter: saturate(-50%);
+}
+.box:disabled div {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.degrade div {
+    background-color: rgba(255, 221, 0, 0.5);
+}
+.normal div {
+    background-color: rgba(0, 255, 47, 0.5);
+}
