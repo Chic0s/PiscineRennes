@@ -24,11 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `adminpage`
+-- Structure de la table `Adminpage`
 --
 
-DROP TABLE IF EXISTS `adminpage`;
-CREATE TABLE IF NOT EXISTS `adminpage` (
+DROP TABLE IF EXISTS `Adminpage`;
+CREATE TABLE IF NOT EXISTS `Adminpage` (
   `id` int NOT NULL AUTO_INCREMENT,
   `identifiants` varchar(255) NOT NULL,
   `mdp` varchar(255) NOT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE IF NOT EXISTS `adminpage` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `adminpage`
+-- Déchargement des données de la table `Adminpage`
 --
 
-INSERT INTO `adminpage` (`id`, `identifiants`, `mdp`) VALUES
+INSERT INTO `Adminpage` (`id`, `identifiants`, `mdp`) VALUES
 (1, 'local', 'local'),
 (2, 'draeto', 'draeto'),
 (4, 'nouqui', 'nouqui'),
@@ -48,11 +48,11 @@ INSERT INTO `adminpage` (`id`, `identifiants`, `mdp`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `bassin`
+-- Structure de la table `Bassin`
 --
 
-DROP TABLE IF EXISTS `bassin`;
-CREATE TABLE IF NOT EXISTS `bassin` (
+DROP TABLE IF EXISTS `Bassin`;
+CREATE TABLE IF NOT EXISTS `Bassin` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_piscine` int NOT NULL,
   `description` varchar(255) NOT NULL,
@@ -61,10 +61,10 @@ CREATE TABLE IF NOT EXISTS `bassin` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `bassin`
+-- Déchargement des données de la table `Bassin`
 --
 
-INSERT INTO `bassin` (`id`, `id_piscine`, `description`) VALUES
+INSERT INTO `Bassin` (`id`, `id_piscine`, `description`) VALUES
 (1, 1, 'Nordique'),
 (2, 1, 'Couvert'),
 (3, 1, 'Bassin'),
@@ -77,11 +77,11 @@ INSERT INTO `bassin` (`id`, `id_piscine`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `code`
+-- Structure de la table `Code`
 --
 
-DROP TABLE IF EXISTS `code`;
-CREATE TABLE IF NOT EXISTS `code` (
+DROP TABLE IF EXISTS `Code`;
+CREATE TABLE IF NOT EXISTS `Code` (
   `id` int NOT NULL AUTO_INCREMENT,
   `code` char(9) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `id_vente` int DEFAULT NULL,
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `code` (
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `code`
+-- Déchargement des données de la table `Code`
 --
 
 INSERT INTO `code` (`id`, `code`, `id_vente`, `id_reservation`) VALUES
@@ -110,11 +110,11 @@ INSERT INTO `code` (`id`, `code`, `id_vente`, `id_reservation`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `créneaux`
+-- Structure de la table `Créneaux`
 --
 
-DROP TABLE IF EXISTS `créneaux`;
-CREATE TABLE IF NOT EXISTS `créneaux` (
+DROP TABLE IF EXISTS `Créneaux`;
+CREATE TABLE IF NOT EXISTS `Créneaux` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_bassin` int NOT NULL,
   `date_debut_cours` datetime NOT NULL,
@@ -125,31 +125,31 @@ CREATE TABLE IF NOT EXISTS `créneaux` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `créneaux`
+-- Déchargement des données de la table `Créneaux`
 --
 
-INSERT INTO `créneaux` (`id`, `id_bassin`, `date_debut_cours`, `date_fin_cours`, `nb_places`) VALUES
+INSERT INTO `Créneaux` (`id`, `id_bassin`, `date_debut_cours`, `date_fin_cours`, `nb_places`) VALUES
 (1, 6, '2023-02-27 16:00:00', '2023-02-27 17:00:00', 10),
 (2, 6, '2023-02-28 15:00:00', '2023-02-28 16:00:00', 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etat_piscine`
+-- Structure de la table `Etat_piscine`
 --
 
-DROP TABLE IF EXISTS `etat_piscine`;
-CREATE TABLE IF NOT EXISTS `etat_piscine` (
+DROP TABLE IF EXISTS `Etat_piscine`;
+CREATE TABLE IF NOT EXISTS `Etat_piscine` (
   `id` int NOT NULL AUTO_INCREMENT,
   `label` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `etat_piscine`
+-- Déchargement des données de la table `Etat_piscine`
 --
 
-INSERT INTO `etat_piscine` (`id`, `label`) VALUES
+INSERT INTO `Etat_piscine` (`id`, `label`) VALUES
 (1, 'Normal'),
 (2, 'Dégradé'),
 (3, 'Fermeture ponctuelle'),
@@ -158,11 +158,11 @@ INSERT INTO `etat_piscine` (`id`, `label`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `formule`
+-- Structure de la table `Formule`
 --
 
-DROP TABLE IF EXISTS `formule`;
-CREATE TABLE IF NOT EXISTS `formule` (
+DROP TABLE IF EXISTS `Formule`;
+CREATE TABLE IF NOT EXISTS `Formule` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   `type` enum('Entrée simple','Entrée simple avec dispositif Sortir','Forfait horaire','Forfait horaire avec dispositif Sortir') CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
@@ -173,10 +173,10 @@ CREATE TABLE IF NOT EXISTS `formule` (
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `formule`
+-- Déchargement des données de la table `Formule`
 --
 
-INSERT INTO `formule` (`id`, `nom`, `type`, `prix`, `periode_validite`, `description`) VALUES
+INSERT INTO `Formule` (`id`, `nom`, `type`, `prix`, `periode_validite`, `description`) VALUES
 (1, 'Entrée simple - 18 ans', 'Entrée simple', 2.25, 31536000, ''),
 (2, 'Entrée simple - 3 ans', 'Entrée simple', 0, 31536000, ''),
 (3, 'Entrée simple adulte', 'Entrée simple', 5.25, 31536000, ''),
@@ -192,11 +192,11 @@ INSERT INTO `formule` (`id`, `nom`, `type`, `prix`, `periode_validite`, `descrip
 -- --------------------------------------------------------
 
 --
--- Structure de la table `piscine`
+-- Structure de la table `Piscine`
 --
 
-DROP TABLE IF EXISTS `piscine`;
-CREATE TABLE IF NOT EXISTS `piscine` (
+DROP TABLE IF EXISTS `Piscine`;
+CREATE TABLE IF NOT EXISTS `Piscine` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
@@ -207,10 +207,10 @@ CREATE TABLE IF NOT EXISTS `piscine` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `piscine`
+-- Déchargement des données de la table `Piscine`
 --
 
-INSERT INTO `piscine` (`id`, `nom`, `adresse`, `id_etat_piscine`, `src_image`) VALUES
+INSERT INTO `Piscine` (`id`, `nom`, `adresse`, `id_etat_piscine`, `src_image`) VALUES
 (1, 'Bréquigny', '12 boulevard Albert 1er ', 1, 'img/choix_Brequigny.jpg'),
 (2, 'Saint-Georges', '2 rue Gambetta', 2, 'img/choix_Saint-Georges.jpg'),
 (3, 'Villejean', '1 square d\'Alsace ', 3, 'img/choix_Villejean.jpg'),
@@ -219,11 +219,11 @@ INSERT INTO `piscine` (`id`, `nom`, `adresse`, `id_etat_piscine`, `src_image`) V
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reservation`
+-- Structure de la table `Reservation`
 --
 
-DROP TABLE IF EXISTS `reservation`;
-CREATE TABLE IF NOT EXISTS `reservation` (
+DROP TABLE IF EXISTS `Reservation`;
+CREATE TABLE IF NOT EXISTS `Reservation` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_creneau` int NOT NULL,
   `heure_res` datetime NOT NULL,
@@ -233,10 +233,10 @@ CREATE TABLE IF NOT EXISTS `reservation` (
 ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `reservation`
+-- Déchargement des données de la table `Reservation`
 --
 
-INSERT INTO `reservation` (`id`, `id_creneau`, `heure_res`, `code`) VALUES
+INSERT INTO `Reservation` (`id`, `id_creneau`, `heure_res`, `code`) VALUES
 (1, 1, '2023-02-24 09:13:42', 111111111),
 (2, 1, '2023-02-24 12:29:29', 222222222),
 (13, 1, '2023-03-03 13:35:57', 333333333),
@@ -248,11 +248,11 @@ INSERT INTO `reservation` (`id`, `id_creneau`, `heure_res`, `code`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ventes`
+-- Structure de la table `Ventes`
 --
 
-DROP TABLE IF EXISTS `ventes`;
-CREATE TABLE IF NOT EXISTS `ventes` (
+DROP TABLE IF EXISTS `Ventes`;
+CREATE TABLE IF NOT EXISTS `Ventes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `date_commande` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_peremption` date NOT NULL,
@@ -263,10 +263,10 @@ CREATE TABLE IF NOT EXISTS `ventes` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `ventes`
+-- Déchargement des données de la table `Ventes`
 --
 
-INSERT INTO `ventes` (`id`, `date_commande`, `date_peremption`, `nb_commandes`, `id_formule`) VALUES
+INSERT INTO `Ventes` (`id`, `date_commande`, `date_peremption`, `nb_commandes`, `id_formule`) VALUES
 (1, '2023-02-24 09:55:04', '2023-06-30', 1, 3),
 (2, '2023-02-24 09:55:04', '2023-03-31', 1, 3),
 (3, '2023-02-24 11:50:12', '2023-03-31', 1, 3),
@@ -281,41 +281,41 @@ INSERT INTO `ventes` (`id`, `date_commande`, `date_peremption`, `nb_commandes`, 
 --
 
 --
--- Contraintes pour la table `bassin`
+-- Contraintes pour la table `Bassin`
 --
-ALTER TABLE `bassin`
-  ADD CONSTRAINT `Bassin_ibfk_1` FOREIGN KEY (`id_piscine`) REFERENCES `piscine` (`id`);
+ALTER TABLE `Bassin`
+  ADD CONSTRAINT `Bassin_ibfk_1` FOREIGN KEY (`id_piscine`) REFERENCES `Piscine` (`id`);
 
 --
--- Contraintes pour la table `code`
+-- Contraintes pour la table `Code`
 --
-ALTER TABLE `code`
-  ADD CONSTRAINT `Code_ibfk_1` FOREIGN KEY (`id_vente`) REFERENCES `ventes` (`id`),
-  ADD CONSTRAINT `Code_ibfk_2` FOREIGN KEY (`id_reservation`) REFERENCES `reservation` (`id`);
+ALTER TABLE `Code`
+  ADD CONSTRAINT `Code_ibfk_1` FOREIGN KEY (`id_vente`) REFERENCES `Ventes` (`id`),
+  ADD CONSTRAINT `Code_ibfk_2` FOREIGN KEY (`id_reservation`) REFERENCES `Reservation` (`id`);
 
 --
--- Contraintes pour la table `créneaux`
+-- Contraintes pour la table `Créneaux`
 --
-ALTER TABLE `créneaux`
-  ADD CONSTRAINT `Créneaux_ibfk_1` FOREIGN KEY (`id_bassin`) REFERENCES `bassin` (`id`);
+ALTER TABLE `Créneaux`
+  ADD CONSTRAINT `Créneaux_ibfk_1` FOREIGN KEY (`id_bassin`) REFERENCES `Bassin` (`id`);
 
 --
--- Contraintes pour la table `piscine`
+-- Contraintes pour la table `Piscine`
 --
-ALTER TABLE `piscine`
-  ADD CONSTRAINT `piscine_ibfk_1` FOREIGN KEY (`id_etat_piscine`) REFERENCES `etat_piscine` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `Piscine`
+  ADD CONSTRAINT `piscine_ibfk_1` FOREIGN KEY (`id_etat_piscine`) REFERENCES `Etat_piscine` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Contraintes pour la table `reservation`
+-- Contraintes pour la table `Reservation`
 --
-ALTER TABLE `reservation`
-  ADD CONSTRAINT `Reservation_ibfk_1` FOREIGN KEY (`id_creneau`) REFERENCES `créneaux` (`id`);
+ALTER TABLE `Reservation`
+  ADD CONSTRAINT `Reservation_ibfk_1` FOREIGN KEY (`id_creneau`) REFERENCES `Créneaux` (`id`);
 
 --
--- Contraintes pour la table `ventes`
+-- Contraintes pour la table `Ventes`
 --
-ALTER TABLE `ventes`
-  ADD CONSTRAINT `Ventes_ibfk_1` FOREIGN KEY (`id_formule`) REFERENCES `formule` (`id`);
+ALTER TABLE `Ventes`
+  ADD CONSTRAINT `Ventes_ibfk_1` FOREIGN KEY (`id_formule`) REFERENCES `Formule` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
