@@ -18,7 +18,7 @@ switch ($path) {
         require_once($racine . '/view/accueil.php');
         break;
     case $file_dir . "/piscines":
-        require_once($racine . '/view/choixpiscines.php');
+        require_once($racine . '/view/piscines.php');
         break;
     case $file_dir ."/choix-piscine":
         require_once($racine . '/view/choixpiscines.php');
@@ -49,6 +49,9 @@ switch ($path) {
         break;
     case $file_dir ."/success":
         require_once($racine . '/view/success.php');
+        break;
+    case $file_dir ."/contact":
+        require_once($racine . '/view/contact.php');
         break;
     default:
         require_once($racine . '/view/erreur.php');
