@@ -23,15 +23,16 @@
 $fileLocation = "admin/mailLog.txt";
 date_default_timezone_set('Europe/Paris');
 $date = date('Y-m-d H:i:s');
+$contentToWrite = '';
 if (isset($_POST['form_submit'])) {
-    $contentToWrite = ' Subject : Message contact portefolio - '.htmlspecialchars($_POST['first_last_name']).
-    'From: Formulaire de contact Piscines <postmaster@piscinesrennes.fr>
-    Horodatage : '.$date('m-d-Y h:i:s a', time()).'
+    $contentToWrite = 'Subject : Message contact portefolio - '.htmlspecialchars($_POST['first_last_name']).
+'From: Formulaire de contact Piscines <postmaster@piscinesrennes.fr>
+Horodatage : '.date('m-d-Y h:i:s a', time()).'
 Nom/prenom : '.htmlspecialchars($_POST['first_last_name']).'
 Email : '.htmlspecialchars($_POST['email']).'
 
-Message : '.$comments.'
-';
+Message : '.$_POST['message'].'
+--------------------------------------------------';
 }
 
 if (file_exists($fileLocation)) {

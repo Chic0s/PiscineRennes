@@ -1,12 +1,35 @@
 .box:disabled img {
     filter: saturate(-50%);
 }
+
 .box:disabled div {
     background-color: rgba(255, 0, 0, 0.5);
 }
+
 .degrade div {
     background-color: rgba(255, 221, 0, 0.5);
 }
+
 .normal div {
     background-color: rgba(0, 255, 47, 0.5);
+}
+
+.presPiscines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.piscine {
+    margin-bottom: 10px;
+}
+
+.piscine>img {
+    margin-top: 4px;
+}
+
+.piscineNom {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
 }

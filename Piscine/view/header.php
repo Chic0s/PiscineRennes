@@ -1,5 +1,5 @@
     <header>
-        <a class="cta" href="#"><button class="NavButton">Contact</button></a>
+        <a class="cta" href="contact"><button class="NavButton">Contact</button></a>
         <nav>
             <ul>
                 <li class="Menu"><a>Menu</a></li>

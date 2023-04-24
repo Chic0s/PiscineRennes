@@ -496,7 +496,6 @@ class ReservationDAO extends DAO
 
 class FormuleDAO extends DAO
 {
-
     public static function readFromId($id)
     {
         $formule = parent::Select('Formule', array('id' => $id))[0];
@@ -562,7 +561,7 @@ class EtatPiscineDAO extends DAO
 {
     public static function readFromId($id)
     {
-        $etatPiscine = parent::Select('Etat_piscine', array('id = ' . $id))[0];
+        $etatPiscine = parent::Select('Etat_piscine', array('id' => $id))[0];
         return new EtatPiscine(
             $id,
             $etatPiscine['label']
