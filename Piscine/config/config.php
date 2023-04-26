@@ -1,24 +1,20 @@
-<?
-   $identifiants = $_POST['identifiants'];
+<?php
 
-   $mdp = $_POST['mdp'];
+$identifiants = $_POST['identifiants'];
 
-   $nom_serveur = "chicosydu2.mysql.db";
+$mdp = $_POST['mdp'];
 
-   $utilisateur = "chicosydu2";
+$nom_serveur = "localhost";
 
-   $mot_de_passe = "JesuisunmdpBidon35";
+$utilisateur = "root";
 
-   $nom_base_donnees = "chicosydu2";
+$mot_de_passe = "";
 
-   $con = mysqli_connect($nom_serveur, $utilisateur, $mot_de_passe,$nom_base_donnees);
+$nom_base_donnees = "chicosydu2";
 
-   if(!$con) {
+$con = mysqli_connect($nom_serveur, $utilisateur, $mot_de_passe, $nom_base_donnees);
 
-       echo '<script>alert("Le service est en Maintenance, Merci de revenir plus tard ! ")</script>';
+if (!$con) {
 
-   };
-
-
-
-?>
+    echo '<script>alert("Le service est en Maintenance, Merci de revenir plus tard ! ")</script>';
+};
