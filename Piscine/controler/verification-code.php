@@ -43,7 +43,7 @@ function affichageVerification($code)
         $piscine = PiscineDAO::readFromId($bassin->getIdPiscine());
         $tableau = array(
           array("Code : ", $codeObj->getCode()),
-          array("État du code : ", "R   éservé le " . $semaine[date('w', $creneau->getDateFinCours())] .
+          array("État du code : ", "Réservé le " . $semaine[date('w', $creneau->getDateFinCours())] .
             date(' d ', $creneau->getDateDebutCours()) .
             $mois[date('n', $creneau->getDateFinCours())] .
             date(' \\d\\e G\\hi', $creneau->getDateDebutCours()) .
@@ -76,7 +76,7 @@ if (isset($_POST['code'])) {
     }
     echo '</table>';
   } else {
-    echo '<p>' . $response . '</p>';
+    echo '<p class="error">' . $response . '</p>';
   }
   exit;
 }

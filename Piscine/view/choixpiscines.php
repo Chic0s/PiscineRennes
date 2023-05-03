@@ -2,7 +2,7 @@
 <br>
 <form action="choix-bassin" class="container">
     <?php
-    require_once $_SERVER['DOCUMENT_ROOT'].'/Piscine/model/DAOs.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/Piscine/db/PiscineDAO.php';
     
     $listePiscines = PiscineDAO::list();
     // Etats possibles : 

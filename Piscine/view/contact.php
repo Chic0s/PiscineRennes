@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/Piscine/model/sendEmail.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Piscine/controler/sendEmail.php';
 ?>
 <h1>Contact</h1>
 <br>

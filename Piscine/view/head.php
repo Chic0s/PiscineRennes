@@ -8,6 +8,4 @@
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="assets/css/selection-element.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="/Piscine/assets/css/style.css">
-    <link rel="stylesheet" href="styles/piscine.css">
 </head>

@@ -26,8 +26,8 @@ foreach ($listeFormules as $key => $formule) {
     $_SESSION["Formule".$formule->getId()] != null && $_SESSION["Formule".$formule->getId()] > 0) {
         $reponse = $_SESSION["Formule".$formule->getId()];
     }
-     echo '<div class="FormPost centrer billetterie-element">
+     echo '<div class="FormPost billetterie-element">
      <p class="Formule">' .$formule->getNom().'</p>
      <input type="number" id="'.$formule->getId().'" name="'.$formule->getId().'" value="'.$reponse.'"  min="0">
-     <p>Prix : '.$formule->getPrix().'€</p><br>';
+     <p>Prix : '.$formule->getPrix().'€</p></div>';
 }

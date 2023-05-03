@@ -4,13 +4,16 @@
         <br>
         <p class="centrer">Sélectionnez la ou les offre(s) que vous souhaiteriez acheter.</p>
         <br>
-        <div class="GenerationForm decallage-gauche">
+        <div class="GenerationForm ">
             <form method="post" action="" class="FormulaireAchat">
+                <div>
                 <?php
                 session_start();
-                require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/model/billeterie.php');
+                require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/controler/billeterie.php');
                 ?>
-                <input class="ButtonFormPost" type="submit" value="Valider">
+                </div>
+                <br>
+                <input class="ButtonFormPost centrer" type="submit" value="Valider">
             </form>
         </div>
     </div>
