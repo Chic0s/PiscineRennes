@@ -53,6 +53,9 @@ switch ($path) {
     case $file_dir ."/contact":
         require_once($racine . '/view/contact.php');
         break;
+    case $file_dir ."/admin":
+        require_once($racine . '/view/accessadmin.php');
+        break;
     default:
         require_once($racine . '/view/erreur.php');
         break;
