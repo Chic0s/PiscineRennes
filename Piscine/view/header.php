@@ -13,5 +13,5 @@
                 </ul>
             </ul>
         </nav>
-        <a href="/Piscine/"><img class="logo" src="img/logo.png" alt="logo"></a>
+        <a href="/Piscine/"><img class="logo" src="assets/img/logo.png" alt="logo"></a>
     </header>
