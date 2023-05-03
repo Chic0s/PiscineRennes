@@ -3,7 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Piscine/model/sendEmail.php';
 ?>
 <h1>Contact</h1>
 <br>
-<form method="post" action="contact" class="contact">
+<form method="post" action="contact" class="contact decallage-gauche">
     <label for="first_last_name">Nom :</label>
     <br><input type="text" name="first_last_name" id="first_last_name" required></input>
     <br><label for="email">Votre email :</label>

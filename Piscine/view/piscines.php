@@ -1,4 +1,4 @@
-<h1>Présentaiton des piscines</h1>
+<h1>Présentation des piscines</h1>
 <br>
 <div class = "presPiscines">
 <?php

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/model/DAOs.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/FormuleDAO.php');
 
 $listeFormules = FormuleDAO::list();
 foreach ($listeFormules as $key => $formule)  {

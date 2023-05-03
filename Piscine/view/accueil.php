@@ -1,8 +1,8 @@
 <!------------------- SLIDE ---------------->
 <div class="slider">
-    <div class="slide"><img src="assets/img/Piscines/Piscine-Brequiny.jpg" alt="" class="imgslider"></div>
-    <div class="slide"><img src="assets/img/Piscines/piscine-gayeulles-rennes.jpg" class="imgslider" alt=""></div>
-    <div class="slide"><img src="assets/img/Piscines/piscine-saint-georges.jpg" class="imgslider active" alt=""></div>
+    <div class="slide"><img src="assets/img/Piscines/choix_Brequigny.jpg" alt="" class="imgslider active    "></div>
+    <div class="slide"><img src="assets/img/Piscines/choix_Gayeulles.jpg" class="imgslider" alt=""></div>
+    <div class="slide"><img src="assets/img/Piscines/choix_Saint-Georges.jpg" class="imgslider" alt=""></div>
 </div>
 </div>
 <script src="assets/js/app.js"></script>

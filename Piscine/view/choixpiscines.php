@@ -1,4 +1,4 @@
-<h1>Choix piscine</h1>
+<h1>Choix de la piscine</h1>
 <br>
 <form action="choix-bassin" class="container">
     <?php

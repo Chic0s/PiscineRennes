@@ -12,9 +12,14 @@
 
 }
 
+/* --------- Commun ------------- */
 
-
-
+.centrer {
+    text-align: center;
+}
+.decallage-gauche {
+    margin-left: 15px;
+}
 
 /* --------- NAVBAR ------------- */
 
@@ -558,5 +563,18 @@ header {
     align-items: center;
     color: white;
     font-size: 21px;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*------------------ Verification du Code ------------------*/
+
+.table-verification-code {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+/*------------------ Page contact ------------------*/
+
+.contact>input {
+    margin-bottom: 5px;
 }

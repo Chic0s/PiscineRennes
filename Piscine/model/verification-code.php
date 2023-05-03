@@ -1,5 +1,10 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/model/DAOs.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/CodeDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/ReservationDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/VenteDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/FormuleDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/BassinDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/PiscineDAO.php');
 
 function affichageVerification($code)
 {
@@ -41,7 +46,7 @@ function affichageVerification($code)
           array("État du code : ", "R   éservé le " . $semaine[date('w', $creneau->getDateFinCours())] .
             date(' d ', $creneau->getDateDebutCours()) .
             $mois[date('n', $creneau->getDateFinCours())] .
-            date(' \\d\\e G\\hi', $creneau->getDateFinCours()) .
+            date(' \\d\\e G\\hi', $creneau->getDateDebutCours()) .
             ' à ' . date('G\\hi', $creneau->getDateFinCours()) . ' pour le bassin ' . $bassin->getDescription() .
             ' de la piscine ' . $piscine->getNom()),
           array("Date d'achat : ", date("d-m-Y", $vente->getDateCommande())),
