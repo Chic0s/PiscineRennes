@@ -1,8 +1,16 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/model/DAOs.php');
-
+/**
+ * Get the necessary functiosn and DAOs from the DAOs.php file
+ */
+require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/DAOs.php');
+/**
+ * All days of the week in a single array to allow the translation and a clean display of the slots
+ */
 $semaine = array(" Dimanche "," Lundi "," Mardi "," Mercredi "," Jeudi ",
 " vendredi "," samedi ");
+/**
+ * All mounths in a single array to allow the translation and a clean display of the slots
+ */
 $mois = array(1=>" janvier "," février "," mars "," avril "," mai "," juin ",
 " juillet "," août "," septembre "," octobre "," novembre "," décembre ");
 foreach (BassinDAO::listByPiscineId(htmlspecialchars($_GET['piscine'])) as $bassin) {

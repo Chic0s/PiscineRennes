@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Piscine/model/DAOs.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/DAOs.php';
 $listePiscines = PiscineDAO::list();
 foreach ($listePiscines as $key => $piscine) {
     $listeBassins = BassinDAO::listByPiscineId($piscine->getId());

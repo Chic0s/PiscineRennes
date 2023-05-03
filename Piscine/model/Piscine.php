@@ -1,12 +1,15 @@
 <?php
 class Piscine
 {
+    #region Attributes
     private $id;
     private $nom;
     private $adresse;
     private $idEtatPiscine;
     private $srcImage;
-    
+    #endregion
+
+    #region Getters/Setters
     public function getId()
     {
         return $this->id;
@@ -27,7 +30,9 @@ class Piscine
     {
         return $this->srcImage;
     }
-
+    #endregion
+    
+    #region Constructor
     public function __construct($id, $nom, $adresse, $idEtatPiscine, $srcImage)
     {
         $this->id = $id;
@@ -36,4 +41,5 @@ class Piscine
         $this->idEtatPiscine = $idEtatPiscine;
         $this->srcImage = $srcImage;
     }
+    #endregion
 }

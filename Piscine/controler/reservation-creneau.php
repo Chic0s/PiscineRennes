@@ -1,6 +1,7 @@
 <?php
 //Import des classes nécessaires
-require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/model/DAOs.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/DAOs.php');
+
 
 function printReservation($resultVerifCode)
 {
@@ -28,7 +29,7 @@ Par ailleurs, si vous ne pouvez plus assister au cours que vous avez réservé,
  veuillez utiliser l\'outil de <a href="verification-code">vérifications de code</a>.</p></div>';
                 } else {
                     $tropCommandes = true;
-                    $errorMessage = '<p id="error">Impossible d\'effectuer une réservation,
+                    $errorMessage = '<p class="error">Impossible d\'effectuer une réservation,
  il ne reste pas assez de places disponibles.</p>';
                 }
                 break;

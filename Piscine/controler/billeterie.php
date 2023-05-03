@@ -1,7 +1,11 @@
 <?php
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/model/DAOs.php');
-
+/**
+ * Get the necessary functiosn and DAOs from the DAOs.php file
+ */
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/DAOs.php');
+/**
+ * List of all the 'formules'
+ */
 $listeFormules = FormuleDAO::list();
 foreach ($listeFormules as $key => $formule) {
     if (isset($_POST[$formule->getId()]) && $_POST[$formule->getId()] > 0) {

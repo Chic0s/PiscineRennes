@@ -1,377 +1,186 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
-
-
-
-*{
-
+* {
     box-sizing: border-box;
-
     margin: 0;
-
     padding: 0;
-
 }
-
-
-
-
 
 /* --------- NAVBAR ------------- */
 
-
-
-
-
-
-
-.navbar a{
-
+.navbar a {
     font-family: 'Montserrat', sans-serif;
-
     font-weight: 400;
-
     font-size: 16px;
-
     color: black;
-
     text-decoration: none;
-
-
-
 }
-
-
 
 header {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
-    padding: 30px 10% ;
-
+    padding: 30px 10%;
 }
-
-
 
 .Menu {
-
     display: none;
-
     font-family: 'Montserrat', sans-serif;
-
     font-weight: 400;
-
     font-size: 16px;
-
     color: black;
-
     list-style-type: none;
-
 }
-
-
 
 .logo {
-
     cursor: pointer;
-
     text-decoration: none;
-
     width: 50px;
-
     height: 50px;
-
 }
 
-
-
-.lienNav a{
-
+.lienNav a {
     text-decoration: none;
-
 }
 
-
-
-.lienNav li{
-
+.lienNav li {
     display: inline-block;
-
     padding: 0px 20px;
-
 }
 
-
-
-.lienNav li{
-
+.lienNav li {
     transition: all 0.3s ease 0s;
-
 }
 
-
-
-.lienNav li a:hover{
-
-    color:aqua;
-
+.lienNav li a:hover {
+    color: aqua;
 }
 
 .PanierImg {
     height: 30px;
 }
 
-
-
 .NavButton {
-
     padding: 9px 25px;
-
     background-color: aqua;
-
     border: none;
-
     border-radius: 50px;
-
-    cursor:pointer;
-
+    cursor: pointer;
     transition: all 0.3s ease 0s;
-
     color: white;
-
 }
 
-
-
-.NavButton:hover{
-
+.NavButton:hover {
     background-color: blue;
-
 }
-
-
-
-
 
 /* ----------- SLIDE ---------------- */
 
-
-
 .slider {
-
     height: 50vh;
-
     position: relative;
-
 }
-
-
 
 .slider img {
-
     object-fit: cover;
-
     height: 100%;
-
     width: 100%;
-
     position: absolute;
-
     top: 0;
-
     opacity: 0;
-
     left: 0;
-
     transition: opacity 1s;
-
 }
-
-
 
 .slider img.active {
-
     opacity: 1;
-
 }
-
-
 
 /* ----------- TEXTBOX ----------- */
 
-
-
 .info-text {
-
     display: flex;
-
     flex-direction: row;
-
     padding: 10%;
-
     justify-content: space-between;
-
     text-align: center;
-
-    
-
 }
-
-
 
 .info-text li {
-
     padding: 2%;
-
     width: 300px;
-
     font-family: 'Montserrat', sans-serif;
-
 }
-
-
 
 .info-text ul {
-
     list-style-type: none;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
 }
-
-
 
 .info-text a {
-
     text-decoration: none;
-
 }
-
-
 
 .info-text .Bouton {
-
     padding: 5px;
-
     background-color: rgb(163, 144, 144);
-
     border-radius: 7px;
-
     text-transform: uppercase;
-
     color: aqua;
-
 }
-
-
-
-
 
 .title-text {
-
     font-size: 22px;
-
 }
-
-
 
 .content-text {
-
-    font-size: 12px; 
-
+    font-size: 12px;
 }
-
-
 
 .avis-text {
-
     font-style: italic;
-
 }
-
-
 
 #AvisGisele {
-
     width: 250px;
-
 }
-
-
 
 .copy {
-
     font-size: 10px;
-
 }
-
-
 
 /* ------------------  RESPONSIVE  -------------------  */
 
-
-
 @media only screen and (max-width: 1020px) {
-
     .info-text {
-
         flex-direction: column;
-
     }
-
 }
-
-
 
 @media only screen and (max-width: 1020px) {
-
     .lienNav {
-
         display: flex;
-
         flex-direction: column;
-
     }
-
     .Menu {
-
         display: flex;
-
         font-size: 20px;
-
         text-align: center;
-
         justify-content: center;
-
     }
-
     .lienNav {
-
         display: none;
-
     }
-
-    .lienNav li:hover{
-
+    .lienNav li:hover {
         display: block;
-
     }
-
 }
-
 
 /*------------------ BOUTIQUE ------------------*/
 
-
-.BoutiqueBox { 
-    margin-top:5%;
+.BoutiqueBox {
+    margin-top: 5%;
     margin-left: 30%;
     display: flex;
     flex-direction: row;
@@ -379,7 +188,7 @@ header {
     justify-content: center;
     width: 610px;
     height: 30px;
-    box-shadow: 1px 1px 12px  rgb(157, 157, 148);
+    box-shadow: 1px 1px 12px rgb(157, 157, 148);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -417,7 +226,7 @@ header {
     border: 1px solid #ddd;
     border-radius: 6px;
     background-color: #fff;
-    box-shadow: 1px 2px 3px 0 rgba(0,0,0,.10);
+    box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, .10);
 }
 
 .form-header {
@@ -425,7 +234,7 @@ header {
     padding: 20px 30px 0;
     border-bottom: 1px solid #e1e8ee;
 }
- 
+
 .form-body {
     height: 340px;
     padding: 30px 30px 20px;
@@ -445,7 +254,7 @@ header {
     font-weight: 100;
     line-height: 14px;
 }
- 
+
 .card-number,
 .month select,
 .year select {
@@ -453,7 +262,7 @@ header {
     font-weight: 100;
     line-height: 14px;
 }
- 
+
 .card-number,
 .cvv-details,
 .cvv-input input,
@@ -482,11 +291,11 @@ header {
     background-position: 85% 50%;
 
 }
- 
+
 .month select {
     float: left;
 }
- 
+
 .year select {
     float: right;
 }
@@ -499,7 +308,7 @@ header {
     border-radius: 6px;
     background: #fff;
 }
- 
+
 .cvv-details {
     font-size: 12px;
     font-weight: 300;
@@ -507,7 +316,7 @@ header {
     float: right;
     margin-bottom: 20px;
 }
- 
+
 .cvv-details p {
     margin-top: 6px;
 }
@@ -519,21 +328,21 @@ header {
     border-color: transparent;
     border-radius: 6px;
 }
- 
+
 .proceed-btn {
     margin-bottom: 10px;
     background: #7dc855;
 }
- 
+
 .proceed-btn a {
     text-decoration: none;
 }
- 
+
 .proceed-btn a {
     color: #fff;
 }
 
-.ReturnBoutique { 
+.ReturnBoutique {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -548,7 +357,7 @@ header {
     align-items: center;
     color: white;
     font-size: 21px;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .PayementAccepted {
@@ -558,5 +367,15 @@ header {
     align-items: center;
     color: white;
     font-size: 21px;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*------------------ Verification du Code ------------------*/
+
+.centrer {
+    text-align: center;
+}
+.table-verification-code {
+    margin: auto;
+    border-collapse: collapse;
 }

@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/model/DAOs.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/DAOs.php');
 
 function affichageVerification($code)
 {
@@ -38,7 +38,7 @@ function affichageVerification($code)
         $piscine = PiscineDAO::readFromId($bassin->getIdPiscine());
         $tableau = array(
           array("Code : ", $codeObj->getCode()),
-          array("État du code : ", "R   éservé le " . $semaine[date('w', $creneau->getDateFinCours())] .
+          array("État du code : ", "Réservé le " . $semaine[date('w', $creneau->getDateFinCours())] .
             date(' d ', $creneau->getDateDebutCours()) .
             $mois[date('n', $creneau->getDateFinCours())] .
             date(' \\d\\e G\\hi', $creneau->getDateFinCours()) .
@@ -61,7 +61,7 @@ function affichageVerification($code)
 if (isset($_POST['code'])) {
   $response = affichageVerification($_POST['code']);
   if (is_array($response)) {
-    echo '<table style="margin: auto; border-collapse: collapse;">';
+    echo '<table class="table-verification-code centrer">';
     foreach ($response as $row) {
       echo '<tr>';
       foreach ($row as $cell) {
@@ -71,7 +71,7 @@ if (isset($_POST['code'])) {
     }
     echo '</table>';
   } else {
-    echo '<p>' . $response . '</p>';
+    echo '<p class="error centrer">' . $response . '</p>';
   }
   exit;
 }

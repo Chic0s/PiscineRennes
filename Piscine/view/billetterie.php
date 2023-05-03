@@ -11,7 +11,7 @@
             <form method="post" action="" class="FormulaireAchat">
                 <?php
                 session_start();
-                require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/model/billeterie.php');
+                require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/controler/billeterie.php');
                 ?>
                 <input class="ButtonFormPost" type="submit" value="Valider">
             </form>

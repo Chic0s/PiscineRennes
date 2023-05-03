@@ -1,14 +1,14 @@
 <?php
 //Import des classes nécessaires
 require_once("ConnexionBD.php");
-require_once("Formule.php");
-require_once("Piscine.php");
-require_once("Bassin.php");
-require_once("Code.php");
-require_once("Creneau.php");
-require_once("EtatPiscine.php");
-require_once("Reservation.php");
-require_once("Vente.php");
+require_once("model/Formule.php");
+require_once("model/Piscine.php");
+require_once("model/Bassin.php");
+require_once("model/Code.php");
+require_once("model/Creneau.php");
+require_once("model/EtatPiscine.php");
+require_once("model/Reservation.php");
+require_once("model/Vente.php");
 
 class DAO
 {

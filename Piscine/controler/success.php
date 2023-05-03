@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/model/DAOs.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/DAOs.php');
     /*
     function CheckPayement() {
         $rep = 1;

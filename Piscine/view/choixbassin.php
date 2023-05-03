@@ -4,6 +4,6 @@
     <?php
     //Import du modèle affichage-bassins.php qui permet de lister les bassins et les crénaux
     //leur étant associés.
-    require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/model/affichage-bassins.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/controler/affichage-bassins.php');
     ?>
 </form>

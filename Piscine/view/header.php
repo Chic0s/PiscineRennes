@@ -9,9 +9,11 @@
                     <li><a href="choix-piscine">Reservation</a></li>
                     <li><a href="billetterie">Billetterie</a></li>
                     <li><a href="verification-code">Verification code</a></li>
-                    <li><a href="boutique"><img class="PanierImg" src="/Piscine/assets/img/panier.png"></a></li>
+                    <li><a href="boutique">
+                        <img class="PanierImg" src="assets/img/panier.png" alt="Panier">
+                    </a></li>
                 </ul>
             </ul>
         </nav>
-        <a href="/Piscine/"><img class="logo" src="img/logo.png" alt="logo"></a>
+        <a href="/Piscine/"><img class="logo" src="assets/img/logo.png" alt="logo"></a>
     </header>

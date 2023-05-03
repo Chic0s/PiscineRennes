@@ -1,11 +1,15 @@
 <?php
+
 class Code
 {
+    #region Attributes
     private $id;
     private $code;
     private $idVente;
     private $idReservation;
-
+    #region YourRegion
+    
+    #endregion
     public function getId()
     {
         return $this->id;
