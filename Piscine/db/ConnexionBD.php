@@ -17,7 +17,7 @@ class ConnexionBD
                 $nomServeur = "localhost";
                 $utilisateur = "root";
                 $motDePasse = "";
-                $nomBaseDonnees = "chicosydu2";
+                $nomBaseDonnees = "SaveData";
                 $instance = new PDO(
                     'mysql:host=' . $nomServeur .
                         ';dbname=' . $nomBaseDonnees .
