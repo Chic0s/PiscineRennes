@@ -433,3 +433,51 @@ header {
     font-weight: bold;
     margin-bottom: 5px;
 }
+
+/*--------------- Page admin ---------------*/
+
+.body-admin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(6, 251, 251, 0.736);
+}
+
+.section-admin {
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 6px;
+}
+
+.form-admin {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-admin input {
+    margin: 5px 0;
+    padding: 5px 5px;
+    outline: 0;
+    border: 1px solid #000;
+    border-radius:6px ;
+}
+
+.form-admin input[type='submit'] {
+    background-color: aqua;
+    border: 0;
+    color: #fff;
+    margin-top: 15px;
+    padding: 6px 0;
+}
+
+.section-admin>img {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    margin:auto;
+    padding:5px;
+}
