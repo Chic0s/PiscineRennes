@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/Piscine/db/DAOs.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Piscine/db/PiscineDAO.php';
 
 $listePiscines = PiscineDAO::list();
 // Etats possibles : 

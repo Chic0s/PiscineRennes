@@ -1,20 +1,20 @@
 <?php
 //Import des classes nécessaires
-require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/DAOs.php');
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/CodeDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/CreneauDAO.php');
 
 function printReservation($resultVerifCode)
 {
     if (isset($_POST['code'])) {
         switch ($resultVerifCode)  {
             case 1:
-                $errorMessage = '<p id="error">Code expiré.</p>';
+                $errorMessage = '<p class="error">Code expiré.</p>';
                 break;
             case 2:
-                $errorMessage = '<p id="error">Ce code a déjà été utilisé.</p>';
+                $errorMessage = '<p class="error">Ce code a déjà été utilisé.</p>';
                 break;
             case 3:
-                $errorMessage = '<p id="error">Ce code n\'existe pas. Veuillez réessayer.</p>';
+                $errorMessage = '<p class="error">Ce code n\'existe pas. Veuillez réessayer.</p>';
                 break;
             default:
                 $code = CodeDAO::readFromCode(htmlspecialchars($_POST['code']));

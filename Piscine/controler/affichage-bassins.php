@@ -1,8 +1,9 @@
 <?php
 /**
- * Get the necessary functiosn and DAOs from the DAOs.php file
+ * Get the necessary functiosn and DAOs from the dedicated files
  */
-require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/DAOs.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/BassinDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/CreneauDAO.php');
 /**
  * All days of the week in a single array to allow the translation and a clean display of the slots
  */
@@ -26,7 +27,7 @@ foreach (BassinDAO::listByPiscineId(htmlspecialchars($_GET['piscine'])) as $bass
         $semaine[date('w', $creneau->getDateFinCours())].
         date(' d ', $creneau->getDateDebutCours()) .
         $mois[date('n', $creneau->getDateFinCours())] .
-        date(' \\d\\e G\\hi', $creneau->getDateFinCours()) .
+        date(' \\d\\e G\\hi', $creneau->getDateDebutCours()) .
         ' à ' . date('G\\hi', $creneau->getDateFinCours()) .
         '</span><span class="epuise"> - Epuisé</span></button><br>';
     }

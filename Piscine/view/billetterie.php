@@ -1,19 +1,19 @@
-<div class="slider"><div class=slide>
-    <img src="/Piscine/assets/img/Piscines/Piscine-Brequiny.jpg" class="imgslider active" alt="">
-</div></div>
-
 <div class=Achat>
     <div class="AchatBox">
-        <h3>Achat</h3>
-        <p>Vous pouvez selectionner l'offre que vous souhaiteriez acheter : </p>
+        <h1>Billetterie</h1>
         <br>
-        <div class="GenerationForm">
+        <p class="centrer">Sélectionnez la ou les offre(s) que vous souhaiteriez acheter.</p>
+        <br>
+        <div class="GenerationForm ">
             <form method="post" action="" class="FormulaireAchat">
+                <div>
                 <?php
                 session_start();
                 require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/controler/billeterie.php');
                 ?>
-                <input class="ButtonFormPost" type="submit" value="Valider">
+                </div>
+                <br>
+                <input class="ButtonFormPost centrer" type="submit" value="Valider">
             </form>
         </div>
     </div>

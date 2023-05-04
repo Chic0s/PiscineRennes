@@ -1,5 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/DAOs.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/FormuleDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/VenteDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/CodeDAO.php');
     /*
     function CheckPayement() {
         $rep = 1;

@@ -52,6 +52,7 @@ session_start();
       </div>
       <?php
       require_once $_SERVER['DOCUMENT_ROOT'] . '/Piscine/controler/payement.php';
+      echo 'Prix total : ' . $price . ' €';
       ?>
       <!-- Buttons -->
       <button type="submit" class="proceed-btn"><a href="">Achat</a></button>

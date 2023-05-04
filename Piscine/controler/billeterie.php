@@ -1,8 +1,8 @@
 <?php
 /**
- * Get the necessary functiosn and DAOs from the DAOs.php file
+ * Get the necessary functiosn and DAOs from the dedicated files
  */
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/DAOs.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/FormuleDAO.php');
 /**
  * List of all the 'formules'
  */
@@ -26,8 +26,8 @@ foreach ($listeFormules as $key => $formule) {
     $_SESSION["Formule".$formule->getId()] != null && $_SESSION["Formule".$formule->getId()] > 0) {
         $reponse = $_SESSION["Formule".$formule->getId()];
     }
-     echo '<div class="FormPost">
+     echo '<div class="FormPost billetterie-element">
      <p class="Formule">' .$formule->getNom().'</p>
      <input type="number" id="'.$formule->getId().'" name="'.$formule->getId().'" value="'.$reponse.'"  min="0">
-     <p>Prix : '.$formule->getPrix().'€</p><br>';
+     <p>Prix : '.$formule->getPrix().'€</p></div>';
 }

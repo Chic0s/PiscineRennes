@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/DAOs.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/FormuleDAO.php');
 $listeFormules = FormuleDAO::list();
 $price = 0;
 foreach ($listeFormules as $key => $formule) {

@@ -1,27 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* --------- Commun ------------- */
+
+.centrer {
+    text-align: center;
+}
+.decallage-gauche {
+    margin-left: 15px;
+}
+
 /* --------- NAVBAR ------------- */
 
-.navbar a {
+.navbar a{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: black;
     text-decoration: none;
 }
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 30px 10% ;
 }
-
 .Menu {
     display: none;
     font-family: 'Montserrat', sans-serif;
@@ -30,46 +37,38 @@ header {
     color: black;
     list-style-type: none;
 }
-
 .logo {
     cursor: pointer;
     text-decoration: none;
     width: 50px;
     height: 50px;
 }
-
-.lienNav a {
+.lienNav a{
     text-decoration: none;
 }
-
-.lienNav li {
+.lienNav li{
     display: inline-block;
     padding: 0px 20px;
 }
-
-.lienNav li {
+.lienNav li{
     transition: all 0.3s ease 0s;
 }
-
-.lienNav li a:hover {
-    color: aqua;
+.lienNav li a:hover{
+    color:aqua;
 }
-
 .PanierImg {
     height: 30px;
 }
-
 .NavButton {
     padding: 9px 25px;
     background-color: aqua;
     border: none;
     border-radius: 50px;
-    cursor: pointer;
+    cursor:pointer;
     transition: all 0.3s ease 0s;
     color: white;
 }
-
-.NavButton:hover {
+.NavButton:hover{
     background-color: blue;
 }
 
@@ -79,7 +78,6 @@ header {
     height: 50vh;
     position: relative;
 }
-
 .slider img {
     object-fit: cover;
     height: 100%;
@@ -90,7 +88,6 @@ header {
     left: 0;
     transition: opacity 1s;
 }
-
 .slider img.active {
     opacity: 1;
 }
@@ -104,24 +101,20 @@ header {
     justify-content: space-between;
     text-align: center;
 }
-
 .info-text li {
     padding: 2%;
     width: 300px;
     font-family: 'Montserrat', sans-serif;
 }
-
 .info-text ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .info-text a {
     text-decoration: none;
 }
-
 .info-text .Bouton {
     padding: 5px;
     background-color: rgb(163, 144, 144);
@@ -129,23 +122,18 @@ header {
     text-transform: uppercase;
     color: aqua;
 }
-
 .title-text {
     font-size: 22px;
 }
-
 .content-text {
-    font-size: 12px;
+    font-size: 12px; 
 }
-
 .avis-text {
     font-style: italic;
 }
-
 #AvisGisele {
     width: 250px;
 }
-
 .copy {
     font-size: 10px;
 }
@@ -157,7 +145,6 @@ header {
         flex-direction: column;
     }
 }
-
 @media only screen and (max-width: 1020px) {
     .lienNav {
         display: flex;
@@ -172,9 +159,35 @@ header {
     .lienNav {
         display: none;
     }
-    .lienNav li:hover {
+    .lienNav li:hover{
         display: block;
     }
+}
+
+/*------------------ Billetterie ------------------*/
+.FormulaireAchat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FormulaireAchat>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
+.billetterie-element {
+    border: 1px solid black;
+    width:fit-content;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.billetterie-element>p {
+    width:fit-content;
 }
 
 /*------------------ BOUTIQUE ------------------*/
@@ -372,10 +385,51 @@ header {
 
 /*------------------ Verification du Code ------------------*/
 
-.centrer {
-    text-align: center;
-}
 .table-verification-code {
     margin: auto;
     border-collapse: collapse;
+}
+
+/*------------------ Page contact ------------------*/
+
+.contact>input {
+    margin-bottom: 5px;
+}
+
+/*------------------ Page piscine ------------------*/
+
+.box:disabled img {
+    filter: saturate(-50%);
+}
+
+.box:disabled div {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.degrade div {
+    background-color: rgba(255, 221, 0, 0.5);
+}
+
+.normal div {
+    background-color: rgba(0, 255, 47, 0.5);
+}
+
+.presPiscines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.piscine {
+    margin-bottom: 10px;
+}
+
+.piscine>img {
+    margin-top: 4px;
+}
+
+.piscineNom {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
