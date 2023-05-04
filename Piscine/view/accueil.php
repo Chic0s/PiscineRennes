@@ -14,7 +14,7 @@
         <li><a class="content-text">Piscine de Villejean enfin accessible en ligne ! Rendez vous 
  sur la page de réservation pour voir si des créneaux sont disponibles !
         </a></li>
-        <li><a href="Nouveauté" class="Bouton">Informations</a></li>
+        <li><a href="piscines" class="Bouton">Informations</a></li>
     </ul>
     <ul class="offer">
         <li><a class="title-text">Offre été</a></li>
@@ -22,7 +22,7 @@
 Venez vous rafraichir dans les piscines de Rennes pendant l'été ! Une boisson fraiche vous est
  offerte pour toute entrée quand la température extérieure dépasse les 35°C !
         </a></li>
-        <li><a href="Nouveauté" class="Bouton">Reserver maintenant !</a></li>
+        <li><a href="choix-piscine" class="Bouton">Reserver maintenant !</a></li>
     </ul>
     <ul class="avis">
         <li><a class="title-text">Avis</a></li>
