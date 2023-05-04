@@ -11,18 +11,16 @@
 <div class="info-text">
     <ul class="news-text">
         <li><a class="title-text">Nouveautés</a></li>
-        <li><a class="content-text">Lorem ipsum
- dolor sit amet consectetur adipisicing elit.
- Voluptatibus accusantium minima corporis, vero quibusdam natus quidem veritatis?
- Dignissimos iusto maiores, deserunt sit officiis alias quas ipsam, dolores adipisci reiciendis voluptas!</a></li>
+        <li><a class="content-text">Piscine de Villejean enfin accessible en ligne ! Rendez vous 
+ sur la page de réservation pour voir si des créneaux sont disponibles !
+        </a></li>
         <li><a href="Nouveauté" class="Bouton">Informations</a></li>
     </ul>
     <ul class="offer">
         <li><a class="title-text">Offre été</a></li>
         <li><a class="content-text">
-Lorem ipsum dolor sit amet consectetur adipisicing elit.
- Voluptatibus accusantium minima corporis, vero quibusdam natus quidem veritatis?
- Dignissimos iusto maiores, deserunt sit officiis alias quas ipsam, dolores adipisci reiciendis voluptas!
+Venez vous rafraichir dans les piscines de Rennes pendant l'été ! Une boisson fraiche vous est
+ offerte pour toute entrée quand la température extérieure dépasse les 35°C !
         </a></li>
         <li><a href="Nouveauté" class="Bouton">Reserver maintenant !</a></li>
     </ul>
@@ -30,7 +28,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit.
         <li><a class="title-text">Avis</a></li>
         <li><a class="content-text">Gisèle</a></li>
         <li><img src="assets/img/avis/4.png" alt="Avis" id="AvisGisele"></li>
-        <li><a class="avis-text">" Le bassin de Brequiny est très propre ! A refaire "</a></li>
+        <li><a class="avis-text">"Le bassin de Brequigny est très propre ! A refaire😊"</a></li>
         <li><a class="avis-text copy">avis - www.google.com</a></li>
     </ul>
 </div>

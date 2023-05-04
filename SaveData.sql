@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 24 avr. 2023 à 12:44
+-- Généré le : jeu. 04 mai 2023 à 12:57
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.2.0
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `Bassin` (
 INSERT INTO `Bassin` (`id`, `id_piscine`, `description`) VALUES
 (1, 1, 'Nordique'),
 (2, 1, 'Couvert'),
-(3, 1, 'Bassin'),
+(3, 1, 'Petit Bassin'),
 (4, 4, 'Sportif'),
 (5, 4, 'Espace ludique'),
 (6, 2, 'Principal'),
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `Code` (
 -- Déchargement des données de la table `Code`
 --
 
-INSERT INTO `code` (`id`, `code`, `id_vente`, `id_reservation`) VALUES
+INSERT INTO `Code` (`id`, `code`, `id_vente`, `id_reservation`) VALUES
 (2, '111111111', 1, 1),
 (3, '222222222', NULL, NULL),
 (4, '333333333', 2, 13),
@@ -211,10 +211,10 @@ CREATE TABLE IF NOT EXISTS `Piscine` (
 --
 
 INSERT INTO `Piscine` (`id`, `nom`, `adresse`, `id_etat_piscine`, `src_image`) VALUES
-(1, 'Bréquigny', '12 boulevard Albert 1er ', 1, 'img/choix_Brequigny.jpg'),
-(2, 'Saint-Georges', '2 rue Gambetta', 2, 'img/choix_Saint-Georges.jpg'),
-(3, 'Villejean', '1 square d\'Alsace ', 3, 'img/choix_Villejean.jpg'),
-(4, 'Gayeulles', '15 avenue des Gayeulles', 4, 'img/choix_Gayeulles.jpg');
+(1, 'Bréquigny', '12 boulevard Albert 1er ', 1, 'assets/img/Piscines/choix_Brequigny.jpg'),
+(2, 'Saint-Georges', '2 rue Gambetta', 2, 'assets/img/Piscines/choix_Saint-Georges.jpg'),
+(3, 'Villejean', '1 square d\'Alsace ', 3, 'assets/img/Piscines/choix_Villejean.jpg'),
+(4, 'Gayeulles', '15 avenue des Gayeulles', 4, 'assets/img/Piscines/choix_Gayeulles.jpg');
 
 -- --------------------------------------------------------
 

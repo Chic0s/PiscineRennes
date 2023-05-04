@@ -1,6 +1,6 @@
 <?php
 /**
- * Get the necessary functiosn and DAOs from the dedicated files
+ * Get the necessary functions and DAOs from the dedicated files
  */
 require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/BassinDAO.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/CreneauDAO.php');
