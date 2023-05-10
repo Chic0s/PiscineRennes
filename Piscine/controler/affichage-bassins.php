@@ -31,5 +31,5 @@ foreach (BassinDAO::listByPiscineId(htmlspecialchars($_GET['piscine'])) as $bass
         ' à ' . date('G\\hi', $creneau->getDateFinCours()) .
         '</span><span class="epuise"> - Epuisé</span></button><br>';
     }
-    echo '</div>';
+    echo '</div><br>';
 }

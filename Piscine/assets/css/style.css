@@ -481,3 +481,46 @@ header {
     margin:auto;
     padding:5px;
 }
+
+.tabs .tab-registers {
+    display: flex;
+    background-color: RGB(255, 255, 255);
+}
+
+
+.tabs button {
+    padding: 0.5em;
+    background-color: RGB(255, 255, 255);
+    border: none;
+    font: inherit;
+}
+
+.tabs .tab-registers button:hover {
+    cursor: pointer;
+}
+
+.tabs .tab-bodies {
+    padding: 0.5em;
+    background-color: RGB(235, 235, 235);
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.tabs .tab-bodies table {
+    border-collapse: collapse;
+}
+.tabs .tab-bodies table th, .tabs .tab-bodies table td {
+    border: solid 1px black;
+    padding:2px 5px;
+}
+.tabs .tab-bodies table .noborder {
+    border:unset;
+}
+
+.tabs button.active-tab {
+    background-color: rgb(235, 235, 235);
+}
+
+caption {
+    margin: 3px 0;
+}

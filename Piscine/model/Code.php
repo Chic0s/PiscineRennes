@@ -28,7 +28,11 @@ class Code
     }
     public function setIdReservation($idToSet)
     {
-        $this->idReservation = $idToSet;
+        if ($idToSet == "unset") {
+            $this->idReservation = null;
+        } else {
+            $this->idReservation = $idToSet;
+        }
     }
     public function __construct($id, $code, $idVente, $idReservation)
     {

@@ -1,8 +1,9 @@
 <?php
+session_start();
 require_once 'view/head.php';
 ?>
 <body>
-<?php require 'view/header.php'; ?>
+<?php require_once 'view/header.php'; ?>
     <main>
     <?php
 // parse_url() analyse une URL et retourne ses composants
@@ -54,7 +55,12 @@ switch ($path) {
         require_once($racine . '/view/contact.php');
         break;
     case $file_dir ."/admin":
-        require_once($racine . '/view/accessadmin.php');
+        require_once($racine . '/controler/connexion-admin.php');
+        if (isset($_SESSION["authorized"]) && $_SESSION["authorized"]) {
+            require_once($racine . '/view/pageadmin.php');
+        } else {
+            require_once($racine . '/view/accessadmin.php');
+        }
         break;
     default:
         require_once($racine . '/view/erreur.php');
