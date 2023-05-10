@@ -19,6 +19,10 @@ class Vente
     {
         return $this->datePeremption;
     }
+    public function setDatePeremption($datePeremptionToSet)
+    {
+        $this->datePeremption = $datePeremptionToSet;
+    }
     public function getNbCommandes()
     {
         return $this->nbCommandes;
@@ -26,6 +30,10 @@ class Vente
     public function getIdFormule()
     {
         return $this->idFormule;
+    }
+    public function setIdFormule($idFormuleToSet)
+    {
+        $this->idFormule = $idFormuleToSet;
     }
 
     public function __construct($id, $dateCommande, $datePeremption, $nbCommandes, $idFormule)

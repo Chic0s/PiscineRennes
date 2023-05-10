@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 04 mai 2023 à 12:57
--- Version du serveur : 8.0.31
+-- Généré le : mer. 10 mai 2023 à 12:39
+-- Version du serveur : 8.0.27
 -- Version de PHP : 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `chicosydu2`
+-- Base de données : `SaveData`
 --
 
 -- --------------------------------------------------------
@@ -83,29 +83,28 @@ INSERT INTO `Bassin` (`id`, `id_piscine`, `description`) VALUES
 DROP TABLE IF EXISTS `Code`;
 CREATE TABLE IF NOT EXISTS `Code` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `code` char(9) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `code` char(9) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `id_vente` int DEFAULT NULL,
   `id_reservation` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_vente` (`id_vente`) USING BTREE,
   KEY `id_reservation` (`id_reservation`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `Code`
 --
 
 INSERT INTO `Code` (`id`, `code`, `id_vente`, `id_reservation`) VALUES
-(2, '111111111', 1, 1),
-(3, '222222222', NULL, NULL),
-(4, '333333333', 2, 13),
-(5, '444444444', 3, 14),
-(6, '555555555', 4, 37),
-(9, '2dUmeU9MQ', 6, NULL),
-(10, 'M3KfY5yZ1', 6, NULL),
-(11, 'McjiNRJRo', 7, NULL),
-(12, 'JGkWBuTtJ', 8, NULL),
-(13, '7dkh9mNdZ', 8, NULL);
+(10, 'M3KfY5yZ1', 6, 64),
+(11, 'McjiNRJRo', 7, 58),
+(12, 'JGkWBuTtJ', 8, 59),
+(13, '7dkh9mNdZ', 8, 60),
+(14, '1CdIjg7Z8', 9, 61),
+(16, 'VfhHGjHq1', 10, 62),
+(17, 'D3va1e0BS', 10, NULL),
+(18, 'dFkHGeb1x', 10, NULL),
+(19, 'LtZn0gPWB', 11, NULL);
 
 -- --------------------------------------------------------
 
@@ -122,15 +121,15 @@ CREATE TABLE IF NOT EXISTS `Créneaux` (
   `nb_places` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `ID_Bassin` (`id_bassin`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `Créneaux`
 --
 
 INSERT INTO `Créneaux` (`id`, `id_bassin`, `date_debut_cours`, `date_fin_cours`, `nb_places`) VALUES
-(1, 6, '2023-02-27 16:00:00', '2023-02-27 17:00:00', 10),
-(2, 6, '2023-02-28 15:00:00', '2023-02-28 16:00:00', 0);
+(1, 6, '2023-10-20 11:00:00', '2023-10-20 12:00:00', 5),
+(6, 2, '2023-05-11 08:27:00', '2023-05-11 09:27:00', 3);
 
 -- --------------------------------------------------------
 
@@ -164,11 +163,11 @@ INSERT INTO `Etat_piscine` (`id`, `label`) VALUES
 DROP TABLE IF EXISTS `Formule`;
 CREATE TABLE IF NOT EXISTS `Formule` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `type` enum('Entrée simple','Entrée simple avec dispositif Sortir','Forfait horaire','Forfait horaire avec dispositif Sortir') CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `nom` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `type` enum('Entrée simple','Entrée simple avec dispositif Sortir','Forfait horaire','Forfait horaire avec dispositif Sortir') CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `prix` float NOT NULL,
   `periode_validite` int NOT NULL DEFAULT '31536000',
-  `description` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
@@ -227,23 +226,22 @@ CREATE TABLE IF NOT EXISTS `Reservation` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_creneau` int NOT NULL,
   `heure_res` datetime NOT NULL,
-  `code` int NOT NULL,
+  `code` varchar(9) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `ID_Creneau` (`id_creneau`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `Reservation`
 --
 
 INSERT INTO `Reservation` (`id`, `id_creneau`, `heure_res`, `code`) VALUES
-(1, 1, '2023-02-24 09:13:42', 111111111),
-(2, 1, '2023-02-24 12:29:29', 222222222),
-(13, 1, '2023-03-03 13:35:57', 333333333),
-(14, 1, '2023-03-03 22:06:35', 444444444),
-(35, 1, '2023-04-20 13:59:28', 555555555),
-(36, 1, '2023-04-20 14:02:11', 555555555),
-(37, 1, '2023-04-20 14:02:51', 555555555);
+(58, 1, '2023-05-10 12:32:47', 'McjiNRJRo'),
+(59, 6, '2023-05-10 12:32:50', 'JGkWBuTtJ'),
+(60, 6, '2023-05-10 12:32:53', '7dkh9mNdZ'),
+(61, 6, '2023-05-10 12:33:03', '1CdIjg7Z8'),
+(62, 6, '2023-05-10 12:33:08', 'VfhHGjHq1'),
+(64, 1, '2023-05-10 12:34:06', 'M3KfY5yZ1');
 
 -- --------------------------------------------------------
 
@@ -260,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `Ventes` (
   `id_formule` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `Ref_offre` (`id_formule`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `Ventes`
@@ -268,13 +266,14 @@ CREATE TABLE IF NOT EXISTS `Ventes` (
 
 INSERT INTO `Ventes` (`id`, `date_commande`, `date_peremption`, `nb_commandes`, `id_formule`) VALUES
 (1, '2023-02-24 09:55:04', '2023-06-30', 1, 3),
-(2, '2023-02-24 09:55:04', '2023-03-31', 1, 3),
-(3, '2023-02-24 11:50:12', '2023-03-31', 1, 3),
-(4, '2023-03-03 11:47:34', '2023-06-30', 1, 3),
+(4, '2023-03-03 11:47:34', '2023-06-30', 1, 2),
 (5, '2023-04-21 08:18:34', '2024-04-20', 1, 11),
 (6, '2023-04-21 08:25:57', '2024-04-20', 1, 11),
 (7, '2023-04-21 08:40:42', '2024-04-20', 1, 6),
-(8, '2023-04-21 08:40:42', '2024-04-20', 1, 7);
+(8, '2023-04-21 08:40:42', '2024-04-20', 1, 7),
+(9, '2023-05-10 06:04:23', '2023-05-17', 2, 1),
+(10, '2023-05-10 06:27:50', '2023-06-01', 3, 8),
+(11, '2023-05-10 07:34:29', '2023-06-10', 1, 11);
 
 --
 -- Contraintes pour les tables déchargées

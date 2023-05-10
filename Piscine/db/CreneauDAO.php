@@ -61,12 +61,12 @@ class CreneauDAO
                 'date_fin_cours' => date("Y-m-d H:i:s", $creneau->getDateFinCours()),
                 'nb_places' => $creneau->getNbPlaces()
             ),
-            'id = ' . $creneau->getId()
+            array('id' => $creneau->getId())
         );
     }
     public static function supress(Creneau $creneau)
     {
-        return DAO::Delete('Creneau', array('id' => $creneau->getId()));
+        return DAO::Delete('Créneaux', array('id' => $creneau->getId()));
     }
 
     public static function verifyCount(Creneau $creneau)
@@ -78,7 +78,7 @@ class CreneauDAO
         WHERE id = $idCreneau"
         );
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetchAll(PDO::FETCH_ASSOC)[0]['nombre_reservations'];
     }
     public static function verificationNombreReservations(Code $code, Creneau $creneau)
     {

@@ -16,7 +16,7 @@ class ReservationDAO
     }
     public static function listByCreneauId($idCreneau)
     {
-        $reservationBD = DAO::Select('Resevation', array('id_creneau' => $idCreneau));
+        $reservationBD = DAO::Select('Reservation', array('id_creneau' => $idCreneau));
         $listReservation =  [];
         foreach ($reservationBD as $key => $reservation) {
             $listReservation[] = new Reservation(
@@ -29,7 +29,7 @@ class ReservationDAO
         return $listReservation;
     }
     public static function create(Reservation $reservation)
-    {
+    {   
         return DAO::Insert(
             'Reservation',
             array(
@@ -42,5 +42,19 @@ class ReservationDAO
     public static function supress(Reservation $reservation)
     {
         return DAO::Delete('Reservation', array('id' => $reservation->getId()));
+    }
+    public static function list()
+    {
+        $reservationBD = DAO::Select('Reservation');
+        $listReservation =  [];
+        foreach ($reservationBD as $key => $reservation) {
+            $listReservation[] = new Reservation(
+                $reservation['id'],
+                $reservation['id_creneau'],
+                strtotime($reservation['heure_res']),
+                $reservation['code']
+            );
+        }
+        return $listReservation;
     }
 }

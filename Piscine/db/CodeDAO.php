@@ -42,8 +42,7 @@ class CodeDAO
             'Code',
             array(
                 'code' => $code->getCode(),
-                'id_vente' => $code->getIdVente(),
-                'id_reservation' => $code->getIdReservation()
+                'id_vente' => $code->getIdVente()
             )
         );
     }
@@ -93,5 +92,35 @@ class CodeDAO
     }
     public static function checkDuplicate(Code $codeGenere) {
         return DAO::Select('Code', array('code' => $codeGenere->getCode()));
+    }
+    public static function list()
+    {
+        $codesBD = DAO::Select('Code');
+        $listCodes = [];
+        foreach ($codesBD as $key => $code) {
+            $listCodes[] = new Code(
+                $code['id'],
+                $code['code'],
+                $code['id_vente'],
+                $code['id_reservation']
+            );
+        }
+        return $listCodes;
+    }
+    public static function listByVenteId($idVente)
+    {
+        $codesBD = DAO::Select('code', array('id_vente' => $idVente));
+        $listCodes =  [];
+        foreach ($codesBD as $key => $code) {
+            if (isset($code)) {
+                $listCodes[] = new Code(
+                    $code['id'],
+                    $code['code'],
+                    $code['id_vente'],
+                    $code['id_reservation']
+                );
+            }
+        }
+        return $listCodes;
     }
 }
