@@ -66,6 +66,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/controler/admin-controlers/aj
                     require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/controler/admin-controlers/vente-admin-controler.php');
                     ?>
                 </table>
+            </form>
         </div>
         <div style="<?php echo ($selectedTab == 3) ? 'display:block;' : 'display:none;'; ?>">
             <form action="admin" method="post" onsubmit="return confirm('Êtes-vous sûr(e) de vouloir supprimer cette réservation ?');">

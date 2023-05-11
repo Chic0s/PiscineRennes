@@ -112,14 +112,14 @@ class CodeDAO
     }
     public static function listByVenteId($idVente)
     {
-        $codesBD = DAO::Select('code', array('id_vente' => $idVente));
+        $codesBD = DAO::Select('Code', array('id_vente' => $idVente));
         $listCodes =  [];
         foreach ($codesBD as $key => $code) {
             if (isset($code)) {
                 $listCodes[] = new Code(
                     $code['id'],
                     $code['code'],
-                    $code['id_vente'],
+                    $idVente,
                     $code['id_reservation']
                 );
             }
