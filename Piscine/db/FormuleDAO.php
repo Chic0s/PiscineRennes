@@ -61,6 +61,12 @@ class FormuleDAO
     }
     public static function supress(Formule $formule)
     {
+        $ventes = VenteDAO::list();
+        foreach ($ventes as $key => $vente) {
+            if ($vente->getIdFormule() == $formule->getId()) {
+                VenteDAO::supress($vente);
+            }
+        }
         return DAO::Delete('Formule', array('id' => $formule->getId()));
     }
 }

@@ -41,6 +41,9 @@ class ReservationDAO
     }
     public static function supress(Reservation $reservation)
     {
+        $code = CodeDAO::readFromCode($reservation->getCode());
+        $code->setIdReservation(null);
+        CodeDAO::modify($code);
         return DAO::Delete('Reservation', array('id' => $reservation->getId()));
     }
     public static function list()

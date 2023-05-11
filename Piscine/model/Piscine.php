@@ -18,17 +18,33 @@ class Piscine
     {
         return $this->nom;
     }
+    public function setNom($nomToSet)
+    {
+        $this->nom = $nomToSet;
+    }
     public function getAdresse()
     {
         return $this->adresse;
+    }
+    public function setAdresse($adresseToSet)
+    {
+        $this->adresse = $adresseToSet;
     }
     public function getIdEtatPiscine()
     {
         return $this->idEtatPiscine;
     }
+    public function setIdEtatPiscine($idEtatPiscineToSet)
+    {
+        $this->idEtatPiscine = $idEtatPiscineToSet;
+    }
     public function getSrcImage()
     {
         return $this->srcImage;
+    }
+    public function setSrcImage($srcImageToSet)
+    {
+        $this->srcImage = $srcImageToSet;
     }
     #endregion
     

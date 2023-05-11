@@ -30,6 +30,10 @@ class Bassin
     {
         return $this->idPiscine;
     }
+    public function setIdPiscine($idPiscineToSet)
+    {
+        $this->idPiscine = $idPiscineToSet;
+    }
     /**
      * Getter of the 'bassin' description attribute
      * @return int $description
@@ -38,7 +42,11 @@ class Bassin
     {
         return $this->description;
     }
-    
+    public function setDescription($descriptionToSet)
+    {
+        $this->description = $descriptionToSet;
+    }
+
     /**
      * Constructor of the Bassin class
      * @param int $id

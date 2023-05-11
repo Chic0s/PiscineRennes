@@ -60,6 +60,9 @@ class CodeDAO
     }
     public static function supress(Code $code)
     {
+        if (null !== $code->getIdReservation()) {
+            ReservationDAO::supress(ReservationDAO::readFromId($code->getIdReservation()));
+        }
         return DAO::Delete('Code', array('id' => $code->getId()));
     }
     public static function verify(Code $code)
