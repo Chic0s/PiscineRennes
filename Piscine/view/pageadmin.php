@@ -82,7 +82,66 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/controler/admin-controlers/aj
                 </table>
             </form>
         </div>
-
+        <div style="<?php echo ($selectedTab == 4) ? 'display:block;' : 'display:none;'; ?>">
+            <form action="admin" method="post" onsubmit="return confirm('Êtes-vous sûr(e) de vouloir modifier/supprimer cette piscine ?');">
+                <table aria-describedby="Gestion des piscines">
+                    <tr>
+                        <th scope="col">Identifiant</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Adresse</th>
+                        <th scope="col">État</th>
+                        <th scope="col">Emplacement de l'image</th>
+                    </tr>
+                    <?php
+                    require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/controler/admin-controlers/piscine-admin-controler.php');
+                    ?>
+                </table>
+            </form>
+        </div>
+        <div style="<?php echo ($selectedTab == 5) ? 'display:block;' : 'display:none;'; ?>">
+            <form action="admin" method="post" onsubmit="return confirm('Êtes-vous sûr(e) de vouloir modifier/supprimer ce bassin ?');">
+                <table aria-describedby="Gestion des bassin">
+                    <tr>
+                        <th scope="col">Identifiant</th>
+                        <th scope="col">Piscine</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    <?php
+                    require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/controler/admin-controlers/bassin-admin-controler.php');
+                    ?>
+                </table>
+            </form>
+        </div>
+        <div style="<?php echo ($selectedTab == 6) ? 'display:block;' : 'display:none;'; ?>">
+            <form action="admin" method="post" onsubmit="return confirm('Êtes-vous sûr(e) de vouloir modifier/supprimer cette formule ?');">
+                <table aria-describedby="Gestion des formule">
+                    <tr>
+                        <th scope="col">Identifiant</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    <?php
+                    require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/controler/admin-controlers/formule-admin-controler.php');
+                    ?>
+                </table>
+            </form>
+        </div>
+        <div style="<?php echo ($selectedTab == 7) ? 'display:block;' : 'display:none;'; ?>">
+            <form action="admin" method="post" onsubmit="return confirm('Êtes-vous sûr(e) de vouloir modifier/supprimer ce compte administrateur ?');">
+                <table aria-describedby="Gestion des comptes administrateur">
+                    <tr>
+                        <th scope="col">Identifiant</th>
+                        <th scope="col">Nom d'utilisateur</th>
+                        <th scope="col">Mot de passe</th>
+                    </tr>
+                    <?php
+                    require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/controler/admin-controlers/adminpage-admin-controler.php');
+                    ?>
+                </table>
+            </form>
+        </div>
     </div>
 </div>
 <script src="assets/js/tabSystem.js"></script>

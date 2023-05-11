@@ -30,6 +30,12 @@ class Adminpage
     {
         return $this->identifiant;
     }
+    public function setIdentifiant($identifiantToSet)
+    {
+        $this->identifiant = $identifiantToSet;
+    }
+
+
     /**
      * Getter of the 'Adminpage' description attribute
      * @return int $description
@@ -37,6 +43,10 @@ class Adminpage
     public function getMdp()
     {
         return $this->mdp;
+    }
+    public function setMdp($mdpToSet)
+    {
+        $this->mdp = $mdpToSet;
     }
     
     /**

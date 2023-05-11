@@ -66,6 +66,10 @@ class CreneauDAO
     }
     public static function supress(Creneau $creneau)
     {
+        $reservations = ReservationDAO::listByCreneauId($creneau->getId());
+        foreach ($reservations as $key => $reservation) {
+            reservationDAO::supress($reservation);
+        }
         return DAO::Delete('Créneaux', array('id' => $creneau->getId()));
     }
 

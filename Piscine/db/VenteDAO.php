@@ -42,6 +42,10 @@ class VenteDAO
     }
     public static function supress(Vente $vente)
     {
+        $codes = CodeDAO::listByVenteId($vente->getId());
+        foreach ($codes as $key => $code) {
+            CodeDAO::supress($code);
+        }
         return DAO::Delete('Ventes', array('id' => $vente->getId()));
     }
     public static function list()

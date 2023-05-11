@@ -17,6 +17,7 @@ $getArguments = "";
 switch ($path) {
     case $file_dir."/":
         require_once($racine . '/view/accueil.php');
+        echo '<a href="admin">Page d\'administration</a>';
         break;
     case $file_dir . "/piscines":
         require_once($racine . '/view/piscines.php');
