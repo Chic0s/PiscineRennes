@@ -6,13 +6,17 @@ class ReservationDAO
 {
     public static function readFromId($id)
     {
-        $reservation = DAO::Select('Reservation', array('id' => $id))[0];
-        return new Reservation(
-            $id,
-            $reservation['id_creneau'],
-            strtotime($reservation['heure_res']),
-            $reservation['code']
-        );
+        $result = DAO::Select('Reservation', array('id' => $id));
+        if (is_array($result) && count($result) > 0) {
+            $reservation = $result[0];
+            return new Reservation(
+                $id,
+                isset($reservation['id_creneau']) ? $reservation['id_creneau'] : null,
+                isset($reservation['heure_res']) ? strtotime($reservation['heure_res']) : null,
+                isset($reservation['code']) ? $reservation['code'] : null
+            );
+        }
+        return null;
     }
     public static function listByCreneauId($idCreneau)
     {
@@ -50,13 +54,17 @@ class ReservationDAO
     {
         $reservationBD = DAO::Select('Reservation');
         $listReservation =  [];
-        foreach ($reservationBD as $key => $reservation) {
-            $listReservation[] = new Reservation(
-                $reservation['id'],
-                $reservation['id_creneau'],
-                strtotime($reservation['heure_res']),
-                $reservation['code']
-            );
+        if (is_array($reservationBD)) {
+            foreach ($reservationBD as $key => $reservation) {
+                if (is_array($reservation)) {
+                    $listReservation[] = new Reservation(
+                        isset($reservation['id']) ? $reservation['id'] : null,
+                        isset($reservation['id_creneau']) ? $reservation['id_creneau'] : null,
+                        isset($reservation['heure_res']) ? strtotime($reservation['heure_res']) : null,
+                        isset($reservation['code']) ? $reservation['code'] : null
+                    );
+                }
+            }
         }
         return $listReservation;
     }
