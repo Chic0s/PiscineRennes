@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 ?>
   <a class="ReturnBoutique" href="/Piscine/boutique">Retour à la boutique</a>
   <form class="credit-card" method="post" action="/Piscine/success">
