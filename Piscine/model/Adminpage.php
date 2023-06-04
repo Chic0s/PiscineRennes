@@ -2,20 +2,20 @@
 class Adminpage
 {
     /**
-     * id of the 'Adminpage'
+     * Id des identifiants de connexion à la page admin
      */
     private $id;
     /**
-     * id ot the 'piscine' related to this 'Adminpage'
+     * Identifiant de connexion à la page admin
      */
     private $identifiant;
     /**
-     * 'description' of the 'Adminpage'
+     * Mot de passe de connexion à la page admin
      */
     private $mdp;
 
     /**
-     * Getter of the 'Adminpage' id attribute
+     * Accesseur de $id d'Adminpage
      * @return int $id
      */
     public function getId()
@@ -23,13 +23,18 @@ class Adminpage
         return $this->id;
     }
     /**
-     * Getter of the 'Adminpage' idPiscine attribute
-     * @return int $idPisicne
+     * Accesseur de $identifiant d'Adminpage
+     * @return string $identifiant
      */
     public function getIdentifiant()
     {
         return $this->identifiant;
     }
+    /**
+     * Mutateur de $identifiant d'Adminpage
+     * @param string $identifiant
+     * @return void
+     */
     public function setIdentifiant($identifiantToSet)
     {
         $this->identifiant = $identifiantToSet;
@@ -37,20 +42,25 @@ class Adminpage
 
 
     /**
-     * Getter of the 'Adminpage' description attribute
-     * @return int $description
+     * Accesseur de $mdp d'Adminpage
+     * @return string $mdp
      */
     public function getMdp()
     {
         return $this->mdp;
     }
+    /**
+     * Mutateur de $mdp d'Adminpage
+     * @param string $mdp
+     * @return void
+     */
     public function setMdp($mdpToSet)
     {
         $this->mdp = $mdpToSet;
     }
     
     /**
-     * Constructor of the Adminpage class
+     * Constructreur de la classe Adminpage
      * @param int $id
      * @param int $identifiant
      * @param string $mdp

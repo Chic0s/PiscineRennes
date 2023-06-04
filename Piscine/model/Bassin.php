@@ -2,20 +2,20 @@
 class Bassin
 {
     /**
-     * id of the 'bassin'
+     * Identifiant du bassin
      */
     private $id;
     /**
-     * id ot the 'piscine' related to this 'bassin'
+     * Identifiant de la piscine dont dépends le bassin
      */
     private $idPiscine;
     /**
-     * 'description' of the 'bassin'
+     * Description du bassin
      */
     private $description;
 
     /**
-     * Getter of the 'bassin' id attribute
+     * Accesseur de $id de Bassin
      * @return int $id
      */
     public function getId()
@@ -23,32 +23,42 @@ class Bassin
         return $this->id;
     }
     /**
-     * Getter of the 'bassin' idPiscine attribute
-     * @return int $idPisicne
+     * Accesseur de $idPiscine de Bassin
+     * @return int $idPiscine
      */
     public function getIdPiscine()
     {
         return $this->idPiscine;
     }
+    /**
+     * Mutateur de $idPiscine de Bassin
+     * @param string $idPiscine
+     * @return void
+     */
     public function setIdPiscine($idPiscineToSet)
     {
         $this->idPiscine = $idPiscineToSet;
     }
     /**
-     * Getter of the 'bassin' description attribute
-     * @return int $description
+     * Accesseur de $description de Bassin
+     * @return string $description
      */
     public function getDescription()
     {
         return $this->description;
     }
+    /**
+     * Mutateur de $description de Bassin
+     * @param string $description
+     * @return void
+     */
     public function setDescription($descriptionToSet)
     {
         $this->description = $descriptionToSet;
     }
 
     /**
-     * Constructor of the Bassin class
+     * Constructeur de la classe Bassin
      * @param int $id
      * @param int $idPiscine
      * @param string $description

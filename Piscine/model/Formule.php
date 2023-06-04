@@ -1,6 +1,9 @@
 <?php
 class Formule
 {
+    /**
+     *  
+     */
     private $id;
     private $nom;
     private $type;
