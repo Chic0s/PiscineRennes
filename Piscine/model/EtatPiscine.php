@@ -29,8 +29,6 @@ class EtatPiscine
 
     /**
      * Constructeur de la classe EtatPiscine
-     * @param int $id
-     * @param string $label
      */
     public function __construct($id, $label)
     {

@@ -32,7 +32,6 @@ class Adminpage
     }
     /**
      * Mutateur de $identifiant d'Adminpage
-     * @param string $identifiant
      * @return void
      */
     public function setIdentifiant($identifiantToSet)
@@ -51,7 +50,6 @@ class Adminpage
     }
     /**
      * Mutateur de $mdp d'Adminpage
-     * @param string $mdp
      * @return void
      */
     public function setMdp($mdpToSet)
@@ -61,9 +59,6 @@ class Adminpage
     
     /**
      * Constructreur de la classe Adminpage
-     * @param int $id
-     * @param int $identifiant
-     * @param string $mdp
      */
     public function __construct($id, $identifiant, $mdp)
     {

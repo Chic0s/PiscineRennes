@@ -32,7 +32,6 @@ class Bassin
     }
     /**
      * Mutateur de $idPiscine de Bassin
-     * @param string $idPiscine
      * @return void
      */
     public function setIdPiscine($idPiscineToSet)
@@ -49,7 +48,6 @@ class Bassin
     }
     /**
      * Mutateur de $description de Bassin
-     * @param string $description
      * @return void
      */
     public function setDescription($descriptionToSet)
@@ -59,9 +57,6 @@ class Bassin
 
     /**
      * Constructeur de la classe Bassin
-     * @param int $id
-     * @param int $idPiscine
-     * @param string $description
      */
     public function __construct($id, $idPiscine, $description)
     {

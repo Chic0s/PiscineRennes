@@ -40,7 +40,6 @@ class Creneau
     }
     /**
      * Mutateur de $idBassin de Créneau
-     * @param int $idBassin
      * @return void
      */
     public function setIdBassin($idBassinToSet)
@@ -57,7 +56,6 @@ class Creneau
     }
     /**
      * Mutateur de $dateDebutCours de Créneau
-     * @param string $dateDebutCours
      * @return void
      */
     public function setDateDebutCours($dateDebutCoursToSet)
@@ -74,7 +72,6 @@ class Creneau
     }
     /**
      * Mutateur de $dateFinCours de Créneau
-     * @param string $dateFinCours
      * @return void
      */
     public function setDateFinCours($dateFinCoursToSet)
@@ -91,7 +88,6 @@ class Creneau
     }
     /**
      * Mutateur de $nbPlaces de Créneau
-     * @param int $nbPlaces
      * @return void
      */
     public function setNbPlaces($nbPlacesToSet)
@@ -101,11 +97,6 @@ class Creneau
 
         /**
      * Constructeur de la classe Créneau
-     * @param int $id
-     * @param int $idBassin
-     * @param string $dateDebutCours
-     * @param string $dateFinCours
-     * @param int $nbPlaces
      */
     public function __construct($id, $idBassin, $dateDebutCours, $dateFinCours, $nbPlaces)
     {

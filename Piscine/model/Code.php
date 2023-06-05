@@ -53,7 +53,6 @@ class Code
     }
     /**
      * Mutateur de $idReservation de Code
-     * @param int $idReservation
      * @return void
      */
     public function setIdReservation($idToSet)
@@ -67,10 +66,6 @@ class Code
 
     /**
      * Constructeur de la classe Code
-     * @param int $id
-     * @param string $code
-     * @param int $idVente
-     * @param int $idRerservation
      */
     public function __construct($id, $code, $idVente, $idReservation)
     {

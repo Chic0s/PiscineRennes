@@ -4,6 +4,10 @@ require_once("model/Adminpage.php");
 
 class AdminpageDAO
 {
+    /**
+     * Récupération d'un Adminpage à partir de son $id
+     * @return Adminpage
+     */
     public static function readFromId($id)
     {
         $toReturn = null;
@@ -18,6 +22,10 @@ class AdminpageDAO
         }
         return $toReturn;
     }
+    /**
+     * Liste des Adminpage
+     * @return Array<Adminpage> $listAdminPages
+     */
     public static function list()
     {
         $adminpagesBD = DAO::Select('Adminpage');
@@ -33,6 +41,10 @@ class AdminpageDAO
         }
         return $listAdminpages;
     }
+    /**
+     * Insère un Adminpage dans la base de données
+     * @return int $idDerniereLigneInseree
+     */
     public static function create(Adminpage $adminpage)
     {
         return DAO::Insert(
@@ -43,6 +55,10 @@ class AdminpageDAO
             )
         );
     }
+    /**
+     * Modifie un Adminpage fournis dans la base
+     * @return int $idLigneModifiee
+     */
     public static function modify(Adminpage $adminpage)
     {
         return DAO::Update(
@@ -54,6 +70,10 @@ class AdminpageDAO
             array('id' => $adminpage->getId())
         );
     }
+    /**
+     * Supprime l'Adminpage spécifié de la base
+     * @return void
+     */
     public static function supress(Adminpage $adminpage)
     {
         return DAO::Delete('Adminpage', array('id' => $adminpage->getId()));
