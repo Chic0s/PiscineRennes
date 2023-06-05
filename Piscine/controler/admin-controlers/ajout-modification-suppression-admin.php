@@ -14,6 +14,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/controler/success.php');
 
 $selectedTab = 0;
 
+//Les ajouts, motifications et suppressions sont vérifiés à chaque rechargemnt de la
+//page d'administration
+
 /*----------------------Ajouts----------------------*/
 
 //Créneau

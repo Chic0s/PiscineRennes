@@ -4,6 +4,10 @@ require_once("model/Vente.php");
 
 class VenteDAO
 {
+    /**
+     * Récupération d'une Vente à partir d'un identifiant
+     * @return Vente
+     */
     public static function readFromId($id)
     {
         $vente = DAO::Select('Ventes', array('id' => $id))[0];
@@ -15,6 +19,10 @@ class VenteDAO
             $vente['id_formule']
         );
     }
+    /**
+     * Insère une Vente dans la base de données
+     * @return int $idDerniereLigneInseree
+     */
     public static function create(Vente $vente)
     {
         return DAO::Insert(
@@ -27,6 +35,10 @@ class VenteDAO
             )
         );
     }
+    /**
+     * Modifie une Vente fournis dans la base
+     * @return int $idLigneModifiee
+     */
     public static function modify(Vente $vente)
     {
         return DAO::Update(
@@ -40,6 +52,11 @@ class VenteDAO
             array('id' => $vente->getId())
         );
     }
+    /**
+     * Supprime la Vente spécifiée de la base
+     * Supprime les codes associés à la vente spécifiée
+     * @return void
+     */
     public static function supress(Vente $vente)
     {
         $codes = CodeDAO::listByVenteId($vente->getId());
@@ -48,6 +65,10 @@ class VenteDAO
         }
         return DAO::Delete('Ventes', array('id' => $vente->getId()));
     }
+    /**
+     * Renvoie une liste des Ventes
+     * @return Vente[] $listVente
+     */
     public static function list()
     {
         $ventesBD = DAO::Select('Ventes');

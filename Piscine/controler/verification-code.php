@@ -6,6 +6,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/FormuleDAO.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/BassinDAO.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/PiscineDAO.php');
 
+/**
+ * Affichage du résultat de la vérification du code, qu'il s'agisse d'un simple
+ * message ou d'un tableau contenant toutes les informations concernant ce code
+ * @return void
+ */
 function affichageVerification($code)
 {
   $codeObj = CodeDAO::readFromCode($code);

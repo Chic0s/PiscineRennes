@@ -1,4 +1,5 @@
 <?php
+//Génération du tableau
 $piscines = PiscineDAO::list();
 $etatsPiscine = EtatPiscineDAO::list();
 foreach ($piscines as $key => $piscine) {
@@ -22,7 +23,7 @@ foreach ($piscines as $key => $piscine) {
     <td class="noborder"><input type="submit" name="supprimerPiscine_' . $piscine->getId() . '" value="Supprimer"></td>
     </tr>';
 }
-
+//Génération du tableau d'ajout
 echo '</table></form>
 <form action="admin" method="post">
 <table aria-describedby="Ajout de piscine">

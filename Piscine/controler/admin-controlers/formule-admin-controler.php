@@ -1,5 +1,5 @@
 <?php
-
+//Génération du tableau
 $formules = FormuleDAO::list();
 foreach ($formules as $key => $formule) {
         echo '<tr>
@@ -24,7 +24,7 @@ foreach ($formules as $key => $formule) {
     <td class="noborder"><input type="submit" name="supprimerFormule_' . $formule->getId() . '" value="Supprimer"></td>
     </tr>';
 }
-    
+//Génération du tableau d'ajout
 echo '</table></form>
 <form action="admin" method="post">
 <table aria-describedby="Ajout de formule">

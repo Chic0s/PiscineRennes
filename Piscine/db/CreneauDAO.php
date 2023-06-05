@@ -1,11 +1,16 @@
 <?php
 require_once("DAO.php");
 require_once("model/Creneau.php");
+require_once("model/Reservation.php");
 require_once("VenteDAO.php");
 require_once("CodeDAO.php");
 
 class CreneauDAO
 {
+    /**
+     * Récupération d'un Creneau à partir d'un identifiant
+     * @return Creneau
+     */
     public static function readFromId($id)
     {
         $toReturn = null;
@@ -22,6 +27,10 @@ class CreneauDAO
         }
         return $toReturn;
     }
+    /**
+     * Renvoie une liste des Creneaux correspondant à Bassin
+     * @return Creneau[] $listCreneaux
+     */
     public static function listByBassinId($idBassin)
     {
         $creneauBD = DAO::Select('Créneaux', array('id_bassin' => $idBassin));
@@ -39,6 +48,10 @@ class CreneauDAO
         }
         return $listCreneaux;
     }
+    /**
+     * Insère un Creneau dans la base de données
+     * @return int $idDerniereLigneInseree
+     */
     public static function create(Creneau $creneau)
     {
         return DAO::Insert(
@@ -51,6 +64,10 @@ class CreneauDAO
             )
         );
     }
+    /**
+     * Modifie un Creneau fournis dans la base
+     * @return int $idLigneModifiee
+     */
     public static function modify(Creneau $creneau)
     {
         return DAO::Update(
@@ -64,15 +81,23 @@ class CreneauDAO
             array('id' => $creneau->getId())
         );
     }
+    /**
+     * Supprime le Creneau spécifié de la base
+     * Supprime également les réservation liées à ce créneau
+     * @return void
+     */
     public static function supress(Creneau $creneau)
     {
         $reservations = ReservationDAO::listByCreneauId($creneau->getId());
         foreach ($reservations as $key => $reservation) {
-            reservationDAO::supress($reservation);
+            ReservationDAO::supress($reservation);
         }
         return DAO::Delete('Créneaux', array('id' => $creneau->getId()));
     }
-
+    /**
+     * Compte le nombre de réservation déjà effectuées sur un créneau
+     * @return int $nombreReservations
+     */
     public static function verifyCount(Creneau $creneau)
     {
         $idCreneau = $creneau->getId();
@@ -84,6 +109,10 @@ class CreneauDAO
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC)[0]['nombre_reservations'];
     }
+    /**
+     * Vérifie si le nombre de réservations est dépassé lors d'une nouvelle réservation
+     * @return boolean
+     */
     public static function verificationNombreReservations(Code $code, Creneau $creneau)
     {
         $vente = VenteDAO::readFromId($code->getIdVente());
@@ -102,6 +131,10 @@ class CreneauDAO
         }
         return $result;
     }
+    /**
+     * Réservation du Creneau avec un Code
+     * @return void
+     */
     public static function reserver(Code $code, Creneau $creneau)
     {
         $reservation = new Reservation(1, $creneau->getId(), time(), $code->getCode());

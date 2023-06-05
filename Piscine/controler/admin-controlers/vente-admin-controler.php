@@ -1,4 +1,5 @@
 <?php
+//Génération du tableau
 $ventes = VenteDAO::list();
 $formules = FormuleDAO::list();
 foreach ($ventes as $key => $vente) {

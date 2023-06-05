@@ -4,6 +4,10 @@ require_once("model/Formule.php");
 
 class FormuleDAO
 {
+    /**
+     * Récupération d'une Formule à partir d'un identifiant
+     * @return Formule
+     */
     public static function readFromId($id)
     {
         $formule = DAO::Select('Formule', array('id' => $id))[0];
@@ -16,6 +20,10 @@ class FormuleDAO
             $formule['description']
         );
     }
+    /**
+     * Renvoie une liste des Formules
+     * @return Formule[] $listFromules
+     */
     public static function list()
     {
         $formulesBD = DAO::Select('Formule');
@@ -32,6 +40,10 @@ class FormuleDAO
         }
         return $listFromules;
     }
+    /**
+     * Insère une Formule dans la base de données
+     * @return int $idDerniereLigneInseree
+     */
     public static function create(Formule $formule)
     {
         return DAO::Insert(
@@ -45,6 +57,10 @@ class FormuleDAO
             )
         );
     }
+    /**
+     * Modifie une Formule fournis dans la base
+     * @return int $idLigneModifiee
+     */
     public static function modify(Formule $formule)
     {
         return DAO::Update(
@@ -59,6 +75,11 @@ class FormuleDAO
             array('id' => $formule->getId())
         );
     }
+    /**
+     * Supprime la Formule spécifiée de la base
+     * Supprime également les ventes lui étant rattachées
+     * @return void
+     */
     public static function supress(Formule $formule)
     {
         $ventes = VenteDAO::list();

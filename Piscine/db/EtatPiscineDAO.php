@@ -4,6 +4,10 @@ require_once("model/EtatPiscine.php");
 
 class EtatPiscineDAO
 {
+    /**
+     * Récupération d'un EtatPiscine à partir d'un identifiant
+     * @return EtatPiscine
+     */
     public static function readFromId($id)
     {
         $etatPiscine = DAO::Select('Etat_piscine', array('id' => $id))[0];
@@ -12,6 +16,10 @@ class EtatPiscineDAO
             $etatPiscine['label']
         );
     }
+    /**
+     * Renvoie une liste des EtatPiscine
+     * @return EtatPiscine[] $listEtatsPiscine
+     */
     public static function list()
     {
         $etatPiscineBD = DAO::Select('Etat_piscine');

@@ -14,6 +14,7 @@ $path = isset($parsed_url['path']) ? $parsed_url['path'] : '/';
 $racine = $_SERVER["DOCUMENT_ROOT"].'/Piscine';
 $file_dir = '/Piscine';
 $getArguments = "";
+//Routage de chaque page par rapport l'URL
 switch ($path) {
     case $file_dir."/":
         require_once($racine . '/view/accueil.php');
@@ -25,6 +26,7 @@ switch ($path) {
     case $file_dir ."/choix-piscine":
         require_once($racine . '/view/choixpiscines.php');
         break;
+    //Récupération des variables transmises en GET via l'URL
     case (preg_match('/\\'.$file_dir.'\/choix-bassin*/', $path) ? true : false):
         if (strpos($path, "?")) {
             $getArguments = "?".explode("?", $path)[1];
@@ -57,6 +59,7 @@ switch ($path) {
         break;
     case $file_dir ."/admin":
         require_once($racine . '/controler/connexion-admin.php');
+        //Si l'utilisateur est déjà authentifié, il entre directement sur la page d'administration
         if (isset($_SESSION["authorized"]) && $_SESSION["authorized"]) {
             require_once($racine . '/view/pageadmin.php');
         } else {
@@ -64,6 +67,7 @@ switch ($path) {
         }
         break;
     default:
+        //Page d'erreur 404
         require_once($racine . '/view/erreur.php');
         break;
 } ?>

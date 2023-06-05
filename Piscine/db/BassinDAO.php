@@ -5,6 +5,10 @@ require_once("CreneauDAO.php");
 
 class BassinDAO
 {
+    /**
+     * Récupération d'un bassin à partir d'un identifiant
+     * @return Bassin
+     */
     public static function readFromId($id)
     {
         $toReturn = null;
@@ -19,6 +23,10 @@ class BassinDAO
         }
         return $toReturn;
     }
+    /**
+     * Récupérer une liste des bassins correspondant à une piscine
+     * @return Bassin[] $listBassins
+     */
     public static function listByPiscineId($idPiscine)
     {
         $bassinsBD = DAO::Select('Bassin', array('id_piscine' => $idPiscine));
@@ -34,6 +42,10 @@ class BassinDAO
         }
         return $listBassins;
     }
+    /**
+     * Insère un Bassin dans la base de données
+     * @return int $idDerniereLigneInseree
+     */
     public static function create(Bassin $bassin)
     {
         return DAO::Insert(
@@ -44,6 +56,10 @@ class BassinDAO
             )
         );
     }
+    /**
+     * Modifie un Bassin fournis dans la base
+     * @return int $idLigneModifiee
+     */
     public static function modify(Bassin $bassin)
     {
         return DAO::Update(
@@ -55,6 +71,11 @@ class BassinDAO
             array('id' => $bassin->getId())
         );
     }
+    /**
+     * Supprime le Bassin spécifié de la base
+     * Supression également des créneaux liés à ce bassin
+     * @return void
+     */
     public static function supress(Bassin $bassin)
     {
         $listCreneaux = CreneauDAO::listByBassinId($bassin->getId());

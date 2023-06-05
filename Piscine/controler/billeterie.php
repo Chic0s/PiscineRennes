@@ -1,21 +1,16 @@
 <?php
-/**
- * Get the necessary functions and DAOs from the dedicated files
- */
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/FormuleDAO.php');
-/**
- * List of all the 'formules'
- */
+
 $listeFormules = FormuleDAO::list();
 foreach ($listeFormules as $key => $formule) {
     if (isset($_POST[$formule->getId()]) && $_POST[$formule->getId()] > 0) {
-        echo '<script>console.log('.$formule->getId().' + " formuleat : " +  '.$_POST[$formule->getId()].')</script>';
+        //echo '<script>console.log('.$formule->getId().' + " formuleat : " +  '.$_POST[$formule->getId()].')</script>';
         if ($_POST[$formule->getId()] != null && $_POST[$formule->getId()] >= 0 ) {
             $_SESSION["Formule".$formule->getId()] = $_POST[$formule->getId()];
             header("Location: /Piscine/boutique");
         }
     } else {
-        echo '<script>console.log("Variable inconnue : " + "'.$formule->getId().'")</script>';
+        //echo '<script>console.log("Variable inconnue : " + "'.$formule->getId().'")</script>';
     }
 }
 foreach ($listeFormules as $key => $formule) {

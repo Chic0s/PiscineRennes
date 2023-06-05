@@ -4,6 +4,10 @@ require_once("model/Reservation.php");
 
 class ReservationDAO
 {
+    /**
+     * Récupération d'une Reservation à partir d'un identifiant
+     * @return Reservation
+     */
     public static function readFromId($id)
     {
         $result = DAO::Select('Reservation', array('id' => $id));
@@ -18,6 +22,10 @@ class ReservationDAO
         }
         return null;
     }
+    /**
+     * Renvoie une liste des Reservation pour le créneau spécifié
+     * @return Reservation[] $listReservations
+     */
     public static function listByCreneauId($idCreneau)
     {
         $reservationBD = DAO::Select('Reservation', array('id_creneau' => $idCreneau));
@@ -32,6 +40,10 @@ class ReservationDAO
         }
         return $listReservation;
     }
+    /**
+     * Insère une Reservation dans la base de données
+     * @return int $idDerniereLigneInseree
+     */
     public static function create(Reservation $reservation)
     {   
         return DAO::Insert(
@@ -43,6 +55,11 @@ class ReservationDAO
             )
         );
     }
+    /**
+     * Supprime la Reservation spécifiée de la base
+     * Enlève l'identifiant de cette réservation dans son code associé
+     * @return void
+     */
     public static function supress(Reservation $reservation)
     {
         $code = CodeDAO::readFromCode($reservation->getCode());
@@ -50,6 +67,10 @@ class ReservationDAO
         CodeDAO::modify($code);
         return DAO::Delete('Reservation', array('id' => $reservation->getId()));
     }
+    /**
+     * Renvoie une liste des Reservation
+     * @return Reservation[] $listReservation
+     */
     public static function list()
     {
         $reservationBD = DAO::Select('Reservation');

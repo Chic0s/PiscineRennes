@@ -1,4 +1,6 @@
 <?php
+
+//Génération du tableau
 $adminpages = AdminpageDAO::list();
 foreach ($adminpages as $key => $adminpage) {
     echo '<tr>
@@ -13,6 +15,7 @@ foreach ($adminpages as $key => $adminpage) {
         $adminpage->getId() . '" value="Supprimer"></td>
         </tr>';
 }
+//Génération du tableau d'ajout
 echo '</table></form>
 <form action="admin" method="post">
 <table aria-describedby="Ajout de compte administrateur">

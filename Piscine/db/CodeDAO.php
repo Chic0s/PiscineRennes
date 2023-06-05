@@ -6,6 +6,10 @@ require_once("VenteDAO.php");
 
 class CodeDAO
 {
+    /**
+     * Récupération d'un code à partir d'un identifiant
+     * @return Code
+     */
     public static function readFromId($id)
     {
         $toReturn = null;
@@ -21,6 +25,10 @@ class CodeDAO
         }
         return $toReturn;
     }
+    /**
+     * Récupération d'un objet code à partir d'un code
+     * @return Code
+     */
     public static function readFromCode($codeTXT)
     {
         $toReturn = null;
@@ -36,6 +44,10 @@ class CodeDAO
         }
         return $toReturn;
     }
+    /**
+     * Insère un Code dans la base de données
+     * @return int $idDerniereLigneInseree
+     */
     public static function create(Code $code)
     {
         return DAO::Insert(
@@ -46,6 +58,10 @@ class CodeDAO
             )
         );
     }
+    /**
+     * Modifie un Code fournis dans la base
+     * @return int $idLigneModifiee
+     */
     public static function modify(Code $code)
     {
         return DAO::Update(
@@ -58,6 +74,10 @@ class CodeDAO
             array('id' => $code->getId())
         );
     }
+    /**
+     * Supprime le Code spécifié de la base
+     * @return void
+     */
     public static function supress(Code $code)
     {
         if (null !== $code->getIdReservation()) {
@@ -65,6 +85,15 @@ class CodeDAO
         }
         return DAO::Delete('Code', array('id' => $code->getId()));
     }
+    /**
+     * Vérifie la validité du code et renvoie
+     * 4 status :
+     * 0 = Code valide
+     * 1 = Code expiré
+     * 2 = Code déjà utilisé
+     * 3 = Le code n'existe pas
+     * @return int
+     */
     public static function verify(Code $code)
     {
         $codeObj = CodeDAO::readFromCode($code->getCode());
@@ -93,9 +122,18 @@ class CodeDAO
         }
         return $result;
     }
+    /**
+     * Vérifie si le code fournis n'existe pas déjà dans la base
+     * Si le code existe, le renvoie, sinon revoie null
+     * @return mixed
+     */
     public static function checkDuplicate(Code $codeGenere) {
         return DAO::Select('Code', array('code' => $codeGenere->getCode()));
     }
+    /**
+     * Renvoie une liste des Codes
+     * @return Code[] $listCodes
+     */
     public static function list()
     {
         $codesBD = DAO::Select('Code');
@@ -110,6 +148,10 @@ class CodeDAO
         }
         return $listCodes;
     }
+    /**
+     * Liste les codes correspondant à une vente
+     * @return Array<Code> $listCodes
+     */
     public static function listByVenteId($idVente)
     {
         $codesBD = DAO::Select('Code', array('id_vente' => $idVente));

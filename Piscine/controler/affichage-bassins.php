@@ -1,19 +1,14 @@
 <?php
-/**
- * Get the necessary functions and DAOs from the dedicated files
- */
+
 require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/BassinDAO.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/CreneauDAO.php');
-/**
- * All days of the week in a single array to allow the translation and a clean display of the slots
- */
+//Liste des jours de la semaine en français
 $semaine = array(" Dimanche "," Lundi "," Mardi "," Mercredi "," Jeudi ",
 " vendredi "," samedi ");
-/**
- * All mounths in a single array to allow the translation and a clean display of the slots
- */
+//Liste des mois en français
 $mois = array(1=>" janvier "," février "," mars "," avril "," mai "," juin ",
 " juillet "," août "," septembre "," octobre "," novembre "," décembre ");
+//Pour chaque bassin, afficher les créneaux et rendre non cliquablesa
 foreach (BassinDAO::listByPiscineId(htmlspecialchars($_GET['piscine'])) as $bassin) {
     echo '<button type="button" class="collapsible-bassin"><h2>' . $bassin->getDescription() . '</h2></button>';
     echo '<div class="collapsible-contenu">';

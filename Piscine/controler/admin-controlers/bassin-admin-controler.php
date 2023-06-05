@@ -1,5 +1,5 @@
 <?php
-
+//Génération du tableau
 foreach ($piscines as $key => $piscine) {
     $bassins = BassinDAO::listByPiscineId($piscine->getId());
     foreach ($bassins as $key => $bassin) {
@@ -24,7 +24,7 @@ foreach ($piscines as $key => $piscine) {
 }
 
 }
-    
+//Génération du tableau d'ajout
 echo '</table></form>
 <form action="admin" method="post">
 <table aria-describedby="Ajout de bassin">

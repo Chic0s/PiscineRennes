@@ -5,8 +5,8 @@ $listePiscines = PiscineDAO::list();
 // Etats possibles : 
 // - 1 : Normal
 // - 2 : Dégradé
-// - 3 : Fermeture ponctuelle
-// - 4 : Fermeture définitive 
+// - 3 : Fermeture ponctuelle, la piscine n'est pas cliquable
+// - 4 : Fermeture définitive, la piscine n'apparait pas
 
 foreach ($listePiscines as $piscine) {
     if ($piscine->getIdEtatPiscine() != 4) {

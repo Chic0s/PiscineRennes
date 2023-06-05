@@ -5,6 +5,10 @@ require_once("BassinDAO.php");
 
 class PiscineDAO
 {
+    /**
+     * Récupération d'une Piscine à partir d'un identifiant
+     * @return Piscine
+     */
     public static function readFromId($id)
     {
         $toReturn = null;
@@ -21,6 +25,10 @@ class PiscineDAO
         }
         return $toReturn;
     }
+    /**
+     * Renvoie une liste des Piscines
+     * @return Piscine[] $listPiscines
+     */
     public static function list()
     {
         $piscinesBD = DAO::Select('Piscine');
@@ -38,6 +46,10 @@ class PiscineDAO
         }
         return $listPiscines;
     }
+    /**
+     * Insère une Piscine dans la base de données
+     * @return int $idDerniereLigneInseree
+     */
     public static function create(Piscine $piscine)
     {
         return DAO::Insert(
@@ -50,6 +62,10 @@ class PiscineDAO
             )
         );
     }
+    /**
+     * Modifie une Piscine fournis dans la base
+     * @return int $idLigneModifiee
+     */
     public static function modify(Piscine $piscine)
     {
         return DAO::Update(
@@ -63,6 +79,11 @@ class PiscineDAO
             array('id' => $piscine->getId())
         );
     }
+    /**
+     * Supprime la Piscine spécifiée de la base
+     * Supprime également les bassins lui étant attachés
+     * @return void
+     */
     public static function supress(Piscine $piscine)
     {
         $listBassins = BassinDAO::listByPiscineId($piscine->getId());

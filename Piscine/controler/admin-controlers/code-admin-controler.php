@@ -1,4 +1,5 @@
 <?php
+//Génération du tableau
 $codes = CodeDAO::list();
 $formules = FormuleDAO::list();
 foreach ($codes as $key => $code) {
@@ -37,7 +38,7 @@ foreach ($codes as $key => $code) {
             <td class="noborder"><input type="submit" name="supprimerCode_' . $code->getId() . '" value="Supprimer"></td>
             </tr>';
 }
-
+//Génération du tableau d'ajout
 echo '</table></form>
 <br>
 <form action="admin" method="post">

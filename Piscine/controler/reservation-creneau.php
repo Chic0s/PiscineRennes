@@ -2,7 +2,11 @@
 //Import des classes nécessaires
 require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/CodeDAO.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/Piscine/db/CreneauDAO.php');
-
+/**
+ * Après la vérification du code, affichage d'une erreur ou réservation dans la base de données
+ * puis affichage d'une page confirmant cette ajout
+ * @return void
+ */
 function printReservation($resultVerifCode)
 {
     if (isset($_POST['code'])) {

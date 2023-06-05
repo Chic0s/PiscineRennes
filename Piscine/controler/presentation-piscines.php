@@ -2,7 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/PiscineDAO.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/BassinDAO.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Piscine/db/EtatPiscineDAO.php';
-
+//Liste des piscines et de leurs bassins
 $listePiscines = PiscineDAO::list();
 foreach ($listePiscines as $key => $piscine) {
     $etatPiscine = EtatPiscineDAO::readFromId($piscine->getIdEtatPiscine());
